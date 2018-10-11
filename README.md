@@ -26,3 +26,40 @@ With our application, no one needs to wait in line for food by providing users c
 - [ ] Email receipt when user decided to confirm on order
 
 ![](https://github.com/Aint-Nobody-Got-Time-For-That/2GO/blob/master/2Go.gif)
+
+## Data Model
+
+| Buyer            |               |
+| -----------------|:-------------:|
+| First Name       | String        |
+| Last Name        | String        |
+| Buyer ID         | Int           |
+| Cart             | [MenuItem]    |
+
+| Seller           |               |
+| -----------------|:-------------:|
+| First Name       | String        |
+| Last Name        | String        |
+| Seller ID        | Int           |
+| ID Resturant(s)  | [Int]         |
+
+| Restaurant       |               |
+| -----------------|:-------------:|
+| ID               | Int           |
+| Name             | String        |
+| Photo (URL)      | [String]      |
+| Category         | [String]      |
+| Address          | String        |
+| Latitude         | Double        |
+| Longitude        | Double        |
+| Phone Number     | String        |
+| Menu             | [MenuItem]    |
+
+| MenuItem         |               |
+| -----------------|:-------------:|
+| ID               | Int           |
+| Rating           | Double        |
+| Photo (URL)      | [String]      |
+| Description      | String        |
+| Allegeries       | String        |
+| Reviews          | [String]      |
