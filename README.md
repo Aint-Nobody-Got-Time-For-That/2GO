@@ -1,10 +1,4 @@
 # 2GO
-<<<<<<< HEAD
-=======
-Ain't nobody got time in wait in line for food.
-
-# 2GO
->>>>>>> c19ab4ef7a0305e9f97f6a9b1c2005b8fd1d32c3
 
 Ain’t nobody got time to wait in line for food.
 
@@ -31,8 +25,4 @@ With our application, no one needs to wait in line for food by providing users c
 - [ ] Apple Pay for paying
 - [ ] Email receipt when user decided to confirm on order
 
-<<<<<<< HEAD
 ![](https://github.com/Aint-Nobody-Got-Time-For-That/2GO/blob/master/2Go.gif)
-=======
-![](https://github.com/Aint-Nobody-Got-Time-For-That/2GO/blob/master/2Go.gif)
->>>>>>> c19ab4ef7a0305e9f97f6a9b1c2005b8fd1d32c3
