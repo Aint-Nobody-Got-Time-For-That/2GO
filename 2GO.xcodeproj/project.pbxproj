@@ -18,7 +18,6 @@
 		57726AC021702E48006E8CDA /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57726ABF21702E48006E8CDA /* MenuItem.swift */; };
 		57726AC221702FD3006E8CDA /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57726AC121702FD3006E8CDA /* FakeData.swift */; };
 		578F5F36216EE993003EE2BE /* KeysSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F5F35216EE993003EE2BE /* KeysSample.swift */; };
-		578F5F38216EEA59003EE2BE /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 578F5F37216EEA59003EE2BE /* Keys.swift */; };
 		67D6ADF6D1566F4DCE2EAC2F /* Pods_2GOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FD50AE81C7BF87A8B22B78 /* Pods_2GOTests.framework */; };
 		7D476B4C7AB3851B17B377E1 /* Pods_2GO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB90632A995F18EFCD251A0A /* Pods_2GO.framework */; };
 		D8BAAD0A7B1847837AFB9EB4 /* Pods_2GOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8675AE9FFD5C0ECCADBD7AA /* Pods_2GOUITests.framework */; };
@@ -62,7 +61,6 @@
 		57726ABF21702E48006E8CDA /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		57726AC121702FD3006E8CDA /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 		578F5F35216EE993003EE2BE /* KeysSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysSample.swift; sourceTree = "<group>"; };
-		578F5F37216EEA59003EE2BE /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		A8675AE9FFD5C0ECCADBD7AA /* Pods_2GOUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2GOUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAF6A3E9E5C78604CD53CA12 /* Pods-2GOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GOTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2GOTests/Pods-2GOTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6B36CE3FFCE43947171C29E /* Pods-2GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2GOUITests/Pods-2GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				57726ABA21702BED006E8CDA /* View Controllers */,
-				57726ABB21702BF6006E8CDA /* Views */,
 				57726ABC21702C09006E8CDA /* Model */,
 				34BF3648216C482D00F474E1 /* AppDelegate.swift */,
 				34BF364C216C482D00F474E1 /* Main.storyboard */,
@@ -146,7 +143,6 @@
 				34BF3651216C482E00F474E1 /* LaunchScreen.storyboard */,
 				34BF3654216C482E00F474E1 /* Info.plist */,
 				578F5F35216EE993003EE2BE /* KeysSample.swift */,
-				578F5F37216EEA59003EE2BE /* Keys.swift */,
 			);
 			path = 2GO;
 			sourceTree = "<group>";
@@ -175,14 +171,6 @@
 				34BF364A216C482D00F474E1 /* ViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		57726ABB21702BF6006E8CDA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Views;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		57726ABC21702C09006E8CDA /* Model */ = {
@@ -341,15 +329,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-2GO-checkManifestLockResult.txt",
 			);
@@ -363,8 +347,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-2GO/Pods-2GO-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
@@ -376,8 +358,6 @@
 				"${BUILT_PRODUCTS_DIR}/ParseUI/ParseUI.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
@@ -397,15 +377,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-2GOUITests-checkManifestLockResult.txt",
 			);
@@ -419,15 +395,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-2GOTests-checkManifestLockResult.txt",
 			);
@@ -445,7 +417,6 @@
 			files = (
 				57726ABE21702D8D006E8CDA /* Restaurant.swift in Sources */,
 				34BF364B216C482D00F474E1 /* ViewController.swift in Sources */,
-				578F5F38216EEA59003EE2BE /* Keys.swift in Sources */,
 				57726AC021702E48006E8CDA /* MenuItem.swift in Sources */,
 				34BF3649216C482D00F474E1 /* AppDelegate.swift in Sources */,
 				578F5F36216EE993003EE2BE /* KeysSample.swift in Sources */,
