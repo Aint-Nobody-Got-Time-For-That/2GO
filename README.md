@@ -25,7 +25,7 @@ With our application, no one needs to wait in line for food by providing users c
 - [ ] Apple Pay for paying
 - [ ] Email receipt when user decided to confirm on order
 
-![](https://github.com/Aint-Nobody-Got-Time-For-That/2GO/blob/patkhai/2Go2.gif)
+![Imgur](https://i.imgur.com/9zJaZz3.gif)
 
 ## Data Model
 
