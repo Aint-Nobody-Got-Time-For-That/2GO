@@ -19,7 +19,7 @@ struct Restaurant {
     let phoneNumber: String
     let menuItems: [MenuItem]
     
-    init(id: Int, name: String,photos: [String], categories: [String], address: String, latitude: Double, longitude: Double, phoneNumber: String, menuItems: [MenuItem]) {
+    init(id: Int, name: String, photos: [String], categories: [String], address: String, latitude: Double, longitude: Double, phoneNumber: String, menuItems: [MenuItem]) {
         self.id = id
         self.name = name
         self.photos = photos
