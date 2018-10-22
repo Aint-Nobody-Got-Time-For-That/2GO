@@ -11,8 +11,8 @@ With our application, no one needs to wait in line for food by providing users c
 - [ ] Users sees an app icon in home screen and styled launch screen
 - [ ] Users can log in and log out of his or her account
 - [ ] The current signed in user is persisted across app restarts
-- [ ] Buyer can scroll through a list of restaurants nearby
-- [ ] Buyer can tap a cell to see a detail view of the restaurant and food
+- [x] Buyer can scroll through a list of restaurants nearby
+- [x] Buyer can tap a cell to see a detail view of the restaurant and food
 - [ ] Buyer can put food into a cart
 - [ ] Buyer can see a confirmation screen
 - [ ] Sellers can create menu for a business, (adding photos and text fields)
@@ -25,7 +25,7 @@ With our application, no one needs to wait in line for food by providing users c
 - [ ] Apple Pay for paying
 - [ ] Email receipt when user decided to confirm on order
 
-![Imgur](https://i.imgur.com/9zJaZz3.gif)
+![](https://github.com/Aint-Nobody-Got-Time-For-That/2GO/patkhai/2go(1).gif)
 
 ## Data Model
 
