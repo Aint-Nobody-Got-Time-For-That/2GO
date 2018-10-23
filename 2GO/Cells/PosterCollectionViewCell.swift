@@ -21,6 +21,7 @@ class PosterCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var catagoriesLabel: UILabel!
     
+    
     func categoriesString(_ categories: [String]) -> String {
         var catString = ""
         for category in categories{
@@ -35,6 +36,7 @@ class PosterCollectionViewCell: UICollectionViewCell {
             self.resName.text = restaurant.name
             self.resPhoto.af_setImage(withURL: URL(string: restaurant.photos[0])!)
             self.catagoriesLabel.text = categoriesString(restaurant.categories)
+            
         
         }
     }
