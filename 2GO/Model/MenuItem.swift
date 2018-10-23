@@ -12,7 +12,7 @@ struct MenuItem {
     let id: Int
     let photo: [String]
     let description: String
-    
+
     // TODO: might not need these properties right now.
 //    let rating: Double
 //    let reviews: [String]

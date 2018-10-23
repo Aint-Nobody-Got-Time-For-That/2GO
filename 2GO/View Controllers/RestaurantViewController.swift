@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class RestaurantViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -17,30 +18,11 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resName: UILabel!
     @IBOutlet weak var resNumber: UILabel!
-    
-    let resPhotos = ["Carnitas Taco with Cheese", "El Pollo Chicken", "El Pastor Taco", "Fish Tacos with Salsa", "Hot Spicy Pork Tacos", "El Cookie Butter Taco", "Chicken Quesadillas", "Steak Burrito"]
-    
-    let resCosts = ["$7.99","$9.99","$6.99","$4.99","$6.99","$8.99","$12.99","$11.99","$10.99",]
-    let resImages = [
-        
-        UIImage(named: "taco1")!,
-        UIImage(named: "taco2")!,
-        UIImage(named: "taco3")!,
-        UIImage(named: "taco4")!,
-        UIImage(named: "taco5")!,
-        UIImage(named: "taco6")!,
-        UIImage(named: "taco7")!,
-        UIImage(named: "taco8")!,
-        ]
-    
-    var image = UIImage()
-    var name = ""
-    
-    @IBAction func didTapAdd(_ sender: UIButton) {
-    }
-    
     @IBOutlet weak var resAddress: UILabel!
-    var restaurant: [Restaurant]? = []
+    
+    var restaurant: Restaurant!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -48,33 +30,21 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         self.tableView.reloadData()
         
         tableView.rowHeight = 145
-//        tableView.estimatedRowHeight = 100
-        resImage.image = image
-        resName.text! = name
         
-        
-        
-        
-        
-        // Do any additional setup after loading the view.
+        resName.text = restaurant.name
+        resNumber.text = restaurant.phoneNumber
+        resAddress.text = restaurant.address
+        resImage.af_setImage(withURL: URL(string: restaurant.photos[0])!)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return resPhotos.count
+        return restaurant.menuItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "resDetail", for: indexPath) as! MenuTableViewCell
-        cell.menuImage.layer.borderWidth = 4
-        cell.menuImage.layer.masksToBounds = false
-        cell.menuImage.layer.borderColor = UIColor.clear.cgColor
-        cell.menuImage.layer.cornerRadius = cell.menuImage.frame.height/2
-        cell.menuImage.clipsToBounds = true
-        cell.menuImage.image = resImages[indexPath.row]
-        
-        cell.menuTitle.text = resPhotos[indexPath.row]
-        cell.menuCost.text = resCosts[indexPath.row]
+
+        cell.menuItem = restaurant.menuItems[indexPath.item]
         return cell
     }
     

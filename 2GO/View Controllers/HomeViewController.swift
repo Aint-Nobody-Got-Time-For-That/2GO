@@ -10,33 +10,16 @@ import UIKit
 import AlamofireImage
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchButtom: UISearchBar!
-
     @IBOutlet weak var resImage: UIImageView!
     
     
-    var restaurant: Restaurant?
-    
-    let resPhotos = ["Tropisueño", "La Taqueria", "Uno Dos Tacos", "Taqueria Castillo Mason", "Don Pisto's", "Papi's", "El Farolito", "La Boraco"]
-    
-    let resImages = [
-    
-        UIImage(named: "taco1")!,
-        UIImage(named: "taco2")!,
-        UIImage(named: "taco3")!,
-        UIImage(named: "taco4")!,
-        UIImage(named: "taco5")!,
-        UIImage(named: "taco6")!,
-        UIImage(named: "taco7")!,
-        UIImage(named: "taco8")!,
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-            collectionView.dataSource = self
-            collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
         //dynamically layout the rows for the cells
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumInteritemSpacing = 40
@@ -45,26 +28,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let interItemSpacing = layout.minimumInteritemSpacing * (cellsPerLine - 1)
         let widthCell = collectionView.frame.width / cellsPerLine - interItemSpacing / cellsPerLine
         layout.itemSize = CGSize(width: widthCell, height: widthCell)
-      
-        
-        resImage.image = UIImage(named: "food")!
-        
-        
-         self.collectionView.reloadData()
-    
-        
+        resImage.image = UIImage(named: "food")! //Home view Image
         // Do any additional setup after loading the view.
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return resPhotos.count
+        return FakeData.restaurants.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PosterCell", for: indexPath) as! PosterCollectionViewCell
-        cell.resName.text = resPhotos[indexPath.item]
-        cell.resPhoto.image = resImages[indexPath.item]
-        
+        cell.restaurant = FakeData.restaurants[indexPath.row]
         return cell
     }
     
@@ -74,20 +48,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         let indexPath = collectionView.indexPath(for: cell)!
         let viewController = segue.destination as! RestaurantViewController
-        viewController.image = self.resImages[indexPath.row]
-        viewController.name = self.resPhotos[indexPath.row]
-    
+        viewController.restaurant = FakeData.restaurants[indexPath.item]
+        
     }
     
-//    @IBAction func posterTap(_ sender: UITapGestureRecognizer) {
-//        performSegue(withIdentifier: "resDetail", sender: nil)
-//    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-
+    
+    
 }
