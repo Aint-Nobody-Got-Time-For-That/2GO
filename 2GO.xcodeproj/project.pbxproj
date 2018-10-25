@@ -12,9 +12,11 @@
 		34253F662178218C00C2317A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34253F652178218C00C2317A /* MenuViewController.swift */; };
 		34253F6D2179BE9400C2317A /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34253F6C2179BE9400C2317A /* PosterCollectionViewCell.swift */; };
 		34253F75217AA64B00C2317A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34253F74217AA64B00C2317A /* MenuTableViewCell.swift */; };
+		3439DFB4218167F0007A67BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3439DFB3218167EF007A67BC /* Assets.xcassets */; };
+		3439DFB821818124007A67BC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFB721818124007A67BC /* CartViewController.swift */; };
+		3439DFBA2181B31B007A67BC /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFB92181B31B007A67BC /* CartTableViewCell.swift */; };
 		34BF3649216C482D00F474E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF3648216C482D00F474E1 /* AppDelegate.swift */; };
 		34BF364E216C482D00F474E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BF364C216C482D00F474E1 /* Main.storyboard */; };
-		34BF3650216C482E00F474E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34BF364F216C482E00F474E1 /* Assets.xcassets */; };
 		34BF3653216C482E00F474E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BF3651216C482E00F474E1 /* LaunchScreen.storyboard */; };
 		34BF365E216C482E00F474E1 /* _GOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF365D216C482E00F474E1 /* _GOTests.swift */; };
 		34BF3669216C482E00F474E1 /* _GOUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF3668216C482E00F474E1 /* _GOUITests.swift */; };
@@ -52,10 +54,12 @@
 		34253F652178218C00C2317A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		34253F6C2179BE9400C2317A /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		34253F74217AA64B00C2317A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		3439DFB3218167EF007A67BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
+		3439DFB721818124007A67BC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		3439DFB92181B31B007A67BC /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		34BF3645216C482D00F474E1 /* 2GO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2GO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BF3648216C482D00F474E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BF364D216C482D00F474E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		34BF364F216C482E00F474E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34BF3652216C482E00F474E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34BF3654216C482E00F474E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34BF3659216C482E00F474E1 /* 2GOTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 2GOTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +127,7 @@
 			children = (
 				34253F6C2179BE9400C2317A /* PosterCollectionViewCell.swift */,
 				34253F74217AA64B00C2317A /* MenuTableViewCell.swift */,
+				3439DFB92181B31B007A67BC /* CartTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -157,10 +162,10 @@
 				57726ABC21702C09006E8CDA /* Model */,
 				34BF3648216C482D00F474E1 /* AppDelegate.swift */,
 				34BF364C216C482D00F474E1 /* Main.storyboard */,
-				34BF364F216C482E00F474E1 /* Assets.xcassets */,
 				34BF3651216C482E00F474E1 /* LaunchScreen.storyboard */,
 				34BF3654216C482E00F474E1 /* Info.plist */,
 				578F5F35216EE993003EE2BE /* KeysSample.swift */,
+				3439DFB3218167EF007A67BC /* Assets.xcassets */,
 			);
 			path = 2GO;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				34253F61217820DE00C2317A /* HomeViewController.swift */,
 				34253F63217820F500C2317A /* RestaurantViewController.swift */,
 				34253F652178218C00C2317A /* MenuViewController.swift */,
+				3439DFB721818124007A67BC /* CartViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -322,7 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BF3653216C482E00F474E1 /* LaunchScreen.storyboard in Resources */,
-				34BF3650216C482E00F474E1 /* Assets.xcassets in Resources */,
+				3439DFB4218167F0007A67BC /* Assets.xcassets in Resources */,
 				34BF364E216C482D00F474E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,10 +444,12 @@
 				57726ABE21702D8D006E8CDA /* Restaurant.swift in Sources */,
 				57726AC021702E48006E8CDA /* MenuItem.swift in Sources */,
 				34253F64217820F500C2317A /* RestaurantViewController.swift in Sources */,
+				3439DFBA2181B31B007A67BC /* CartTableViewCell.swift in Sources */,
 				34BF3649216C482D00F474E1 /* AppDelegate.swift in Sources */,
 				578F5F36216EE993003EE2BE /* KeysSample.swift in Sources */,
 				57726AC221702FD3006E8CDA /* FakeData.swift in Sources */,
 				34253F62217820DE00C2317A /* HomeViewController.swift in Sources */,
+				3439DFB821818124007A67BC /* CartViewController.swift in Sources */,
 				34253F662178218C00C2317A /* MenuViewController.swift in Sources */,
 				34253F6D2179BE9400C2317A /* PosterCollectionViewCell.swift in Sources */,
 				34253F75217AA64B00C2317A /* MenuTableViewCell.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 import AlamofireImage
 
 class RestaurantViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var lineImage: UIImageView!
     @IBOutlet weak var menuSelection: UILabel!
     @IBOutlet weak var resRatings: UIImageView!
@@ -19,10 +19,11 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var resName: UILabel!
     @IBOutlet weak var resNumber: UILabel!
     @IBOutlet weak var resAddress: UILabel!
+    @IBOutlet weak var layoutView: UIView!
     
     var restaurant: Restaurant!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -34,7 +35,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         resName.text = restaurant.name
         resNumber.text = restaurant.phoneNumber
         resAddress.text = restaurant.address
-        resImage.af_setImage(withURL: URL(string: restaurant.photos[0])!)
+     
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,10 +44,25 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "resDetail", for: indexPath) as! MenuTableViewCell
-
+        
         cell.menuItem = restaurant.menuItems[indexPath.item]
         return cell
     }
+    
+ 
+   
+    
+    //initiation the segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+
+        let indexPath = tableView.indexPath(for: cell)!
+        let viewController = segue.destination as! MenuViewController
+        viewController.menu = restaurant.menuItems[indexPath.row]
+
+    }
+    
+    
     
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +70,6 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
-
-
+    
+    
 }

@@ -27,7 +27,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cellsPerLine: CGFloat = 2
         let interItemSpacing = layout.minimumInteritemSpacing * (cellsPerLine - 1)
         let widthCell = collectionView.frame.width / cellsPerLine - interItemSpacing / cellsPerLine
-        layout.itemSize = CGSize(width: widthCell - 2, height: widthCell + 6)
+        layout.itemSize = CGSize(width: widthCell - 4, height: widthCell + 6)
         
         resImage.image = UIImage(named: "food")! //Home view Image
         // Do any additional setup after loading the view.
@@ -47,6 +47,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
+        cell.layer.cornerRadius = 5
+        
         return cell
     }
     
@@ -57,6 +59,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let indexPath = collectionView.indexPath(for: cell)!
         let viewController = segue.destination as! RestaurantViewController
         viewController.restaurant = FakeData.restaurants[indexPath.item]
+        self.tabBarController?.tabBar.isHidden = false
         
     }
     

@@ -31,6 +31,11 @@ class PosterCollectionViewCell: UICollectionViewCell {
         return catString
     }
     
+    override func awakeFromNib() {
+        self.resPhoto.layer.cornerRadius = 5
+        self.resPhoto.clipsToBounds = true
+    }
+    
     var restaurant: Restaurant! {
         didSet {
             self.resName.text = restaurant.name

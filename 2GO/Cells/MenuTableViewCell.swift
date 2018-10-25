@@ -23,7 +23,7 @@ class MenuTableViewCell: UITableViewCell {
             self.menuImage.layer.cornerRadius = menuImage.frame.height/2
             self.menuImage.clipsToBounds = true
             self.menuImage.af_setImage(withURL: URL(string: menuItem.photo[0])!)
-            self.menuCost.text = String(menuItem.id)
+            self.menuCost.text = String("$\(menuItem.menuCost)")
         }
     }
    
