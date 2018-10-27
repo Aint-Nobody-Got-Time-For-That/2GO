@@ -13,10 +13,10 @@ With our application, no one needs to wait in line for food by providing users c
 - [ ] The current signed in user is persisted across app restarts
 - [x] Buyer can scroll through a list of restaurants nearby
 - [x] Buyer can tap a cell to see a detail view of the restaurant and food
-- [ ] Buyer can put food into a cart
+- [x] Buyer can put food into a cart
 - [ ] Buyer can see a confirmation screen
-- [ ] Sellers can create menu for a business, (adding photos and text fields)
-- [ ] Sellers can edit their business
+- [x] Sellers can create menu for a business, (adding photos and text fields)
+- [x] Sellers can edit their business
 - [ ] Sellers can get a notification on any orders that are coming.
 
 ## Optionals
@@ -25,7 +25,7 @@ With our application, no one needs to wait in line for food by providing users c
 - [ ] Apple Pay for paying
 - [ ] Email receipt when user decided to confirm on order
 
-![](https://github.com/Aint-Nobody-Got-Time-For-That/2GO/blob/patkhai/2go(1).gif)
+![](https://github.com/Aint-Nobody-Got-Time-For-That/2GO/blob/patkhai/2go(2).gif)
 
 ## Data Model
 
