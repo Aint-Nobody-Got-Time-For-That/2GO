@@ -23,6 +23,22 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     
     var restaurant: Restaurant!
     
+  
+    
+    @IBAction func addtoCart(_ sender: UIButton) {
+        alertControl()
+    }
+    
+    func alertControl () {
+        let alertController = UIAlertController(title: "Menu Item Added!", message: "Try a new one" , preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+        }
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true) {
+            // optional code for what happens after the alert controller has finished presenting
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

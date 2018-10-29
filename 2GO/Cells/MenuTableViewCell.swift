@@ -14,6 +14,8 @@ class MenuTableViewCell: UITableViewCell {
     @IBOutlet weak var menuTitle: UILabel!
     @IBOutlet weak var menuImage: UIImageView!
     
+    
+    
     var menuItem: MenuItem! {
         didSet {
             self.menuTitle.text = menuItem.description

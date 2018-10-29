@@ -109,7 +109,7 @@
                     <connections>
                         <outlet property="collectionView" destination="CHl-ao-tne" id="1wr-8F-VOz"/>
                         <outlet property="resImage" destination="3lC-aW-a4T" id="2N1-br-NWU"/>
-                        <outlet property="searchButtom" destination="U2V-p8-EVg" id="18e-sO-7A3"/>
+                        <outlet property="searchBar" destination="U2V-p8-EVg" id="MYr-B3-V1e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -164,7 +164,7 @@
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <state key="normal" title="Button" image="add-1"/>
                                                             <connections>
-                                                                <action selector="didTapAdd:" destination="uoI-CD-h4x" eventType="touchUpInside" id="6za-qi-F8Q"/>
+                                                                <action selector="addtoCart:" destination="uoI-CD-h4x" eventType="touchUpInside" id="FVF-bL-x3S"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -265,11 +265,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" rowHeight="129" id="4TY-Tr-N4T" customClass="CartTableViewCell" customModule="_GO" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="129"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" rowHeight="121" id="4TY-Tr-N4T" customClass="CartTableViewCell" customModule="_GO" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4TY-Tr-N4T" id="5Xu-XL-8zP">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="128.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Y5-CQ-baK">
@@ -301,9 +301,12 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-0H-3WS">
-                                <rect key="frame" x="174" y="627" width="66" height="30"/>
+                                <rect key="frame" x="20" y="627" width="374" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Checkout"/>
+                                <color key="backgroundColor" red="0.16078431369999999" green="0.20784313730000001" blue="0.35686274509999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Checkout">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="didTapCheckout:" destination="Eff-5Q-sBW" eventType="touchUpInside" id="bTz-nu-1p4"/>
                                 </connections>
@@ -319,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rzh-4T-Rlu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="965" y="920"/>
+            <point key="canvasLocation" x="1002.8985507246377" y="919.56521739130437"/>
         </scene>
         <!--Menu-->
         <scene sceneID="IWx-SX-1vD">
@@ -391,9 +394,6 @@
                                     <action selector="savetoCart:" destination="dFn-Ew-YHp" eventType="touchUpInside" id="Z7q-8p-o3b"/>
                                 </connections>
                             </button>
-                            <connections>
-                                <segue destination="Eff-5Q-sBW" kind="show" identifier="cart" id="jKo-YD-cC2"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -403,6 +403,7 @@
                         <outlet property="menuTitle" destination="gyo-NG-SY8" id="YoW-lj-MLx"/>
                         <outlet property="ratingImage" destination="reK-UF-ns8" id="zEz-xt-TAG"/>
                         <outlet property="subView" destination="OtZ-oK-Ugm" id="bWo-dQ-9Ur"/>
+                        <segue destination="Eff-5Q-sBW" kind="show" identifier="menuDetail" id="gXp-2c-oMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8o-LR-8Ep" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -478,6 +479,6 @@
         <image name="taco1" width="640" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jKo-YD-cC2"/>
+        <segue reference="gXp-2c-oMS"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -18,6 +18,7 @@ struct Restaurant {
     let longitude: Double
     let phoneNumber: String
     let menuItems: [MenuItem]
+//    let cartItems: [Cart]
     
     init(id: Int, name: String, photos: [String], categories: [String], address: String, latitude: Double, longitude: Double, phoneNumber: String, menuItems: [MenuItem]) {
         self.id = id
@@ -29,5 +30,10 @@ struct Restaurant {
         self.longitude = longitude
         self.phoneNumber = phoneNumber
         self.menuItems = menuItems
+
     }
+    
+//    class func searchWithTerm(term: String, sort: YelpSortMode?, categories: [String]?, limit: Int?, offset: Int?, completion: @escaping ([Restaurant]?, Error?) -> Void) -> Void {
+//        _ = YelpClient.sharedInstance.searchWithTerm(term, sort: sort, categories: categories, openNow: false, completion: completion)
+//    }
 }

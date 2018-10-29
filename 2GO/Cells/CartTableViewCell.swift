@@ -9,19 +9,20 @@
 import UIKit
 
 class CartTableViewCell: UITableViewCell {
-    @IBOutlet weak var menuName: UILabel!
     
+    
+    @IBOutlet weak var menuName: UILabel!
     @IBOutlet weak var menuCost: UILabel!
     @IBOutlet weak var menuImage: UIImageView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+        
+        var menuPick: Cart! {
+            didSet {
+                self.menuName.text = menuPick.name
+                self.menuCost.text = String("$\(menuPick.menuCost)")
+                self.menuImage.af_setImage(withURL: URL(string: menuPick.photo[0])!)
+            }
+        
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
 
 }

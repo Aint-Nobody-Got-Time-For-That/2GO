@@ -7,3 +7,15 @@
 //
 
 import Foundation
+struct Cart {
+    let photo: [String]
+    let name: String
+    let menuCost: Double
+    
+    init(photo: [String], name: String, menuCost: Double) {
+        self.photo = photo
+        self.name = name
+        self.menuCost = menuCost
+    }
+    
+}

@@ -47,4 +47,6 @@ struct FakeData {
             MenuItem(id: 2, photo: ["https://thecozyapron.com/wp-content/uploads/2018/03/baja-fish-tacos_thecozyapron_1.jpg"], description: "Fish Tacos", menuDescription: "This is the perfect Fish Tacos you will ever have.", menuCost: 10.99)
         ])
     ]
+    
+    static var carts: [Cart] = [Cart(photo:  ["https://thecozyapron.com/wp-content/uploads/2018/03/baja-fish-tacos_thecozyapron_1.jpg"], name: "Fish Tacos", menuCost: 10.99), Cart(photo:  ["https://images.unsplash.com/photo-1529006557810-274b9b2fc783?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ae10582705f9402e297585fdb33b6348&auto=format&fit=crop&w=800&q=60"], name: "Beef Shawarma", menuCost: 9.99),Cart(photo:  ["https://thecozyapron.com/wp-content/uploads/2018/03/baja-fish-tacos_thecozyapron_1.jpg"], name: "Fish Tacos", menuCost: 10.99), Cart(photo: ["https://www.skinnytaste.com/wp-content/uploads/2013/04/easiest-crock-pot-salsa-verde-chicken-550x367.jpg"], name: "Slow-Cooked Salsa Verde Chicken Taco", menuCost: 12.99)]
 }

@@ -9,17 +9,21 @@
 import UIKit
 import AlamofireImage
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var searchButtom: UISearchBar!
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var resImage: UIImageView!
     
+    var restaurant: [Restaurant]!
+    var currentRes: [Restaurant]?
+    var filteredData: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        searchBar.delegate = self
         //dynamically layout the rows for the cells
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumInteritemSpacing = 10
@@ -28,8 +32,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let interItemSpacing = layout.minimumInteritemSpacing * (cellsPerLine - 1)
         let widthCell = collectionView.frame.width / cellsPerLine - interItemSpacing / cellsPerLine
         layout.itemSize = CGSize(width: widthCell - 4, height: widthCell + 6)
-        
+        currentRes = restaurant
         resImage.image = UIImage(named: "food")! //Home view Image
+
         // Do any additional setup after loading the view.
     }
     
@@ -52,6 +57,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
     }
     
+//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        guard !searchText.isEmpty else {
+//            currentRes = restaurant
+//            collectionView.reloadData()
+//            return
+//        }
+//        currentRes = restaurant.filter({ restaurant -> Bool in
+//           restaurant.name.contains(searchText)
+//        })
+//        collectionView.reloadData()
+//    }
+    
     //initiation the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UICollectionViewCell
@@ -63,11 +80,45 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    //search Bar
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            self.currentRes = self.restaurant
+        }else{
+            self.currentRes = self.restaurant.filter({
+                ($0.name.contains(searchText))
+            })
+        }
+        self.collectionView.reloadData()
     }
     
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//
+//        if let text = searchBar.text, text.count > 0 {
+//
+//                self.restaurant = restaurant
+//                self.tableView.reloadData()
+//                searchBar.setShowsCancelButton(false, animated: true)
+//                searchBar.endEditing(true)
+//                self.tableView.resignFirstResponder()
+//
+//            }
+//
+//        }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        collectionView.resignFirstResponder()
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+  
     
     
 }

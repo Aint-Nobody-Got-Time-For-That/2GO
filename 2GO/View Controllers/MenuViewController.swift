@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import AlamofireImage
 
-class MenuViewController: UIViewController {
+//protocol DataSentDelegate {
+//    func userAddData(data: MenuItem)
+//}
+
+class MenuViewController: UIViewController   {
     
     @IBOutlet weak var menuDescription: UILabel!
     @IBOutlet weak var menuTitle: UILabel!
@@ -18,9 +23,10 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var menuImage: UIImageView!
     
     var menu: MenuItem!
+//    var delegate: DataSentDelegate? = nil
     
     var counterItem = 0
-    
+    //    var title: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,29 +42,22 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func savetoCart(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "cart", sender: nil)
+        self.performSegue(withIdentifier: "menuDetail", sender: nil)
     }
     
     @IBAction func addtoCart(_ sender: UIButton) {
-        
-        // Display a message to the user
-        //        if let menuItems = self.menu {
-        //            Restaurant.init(id: <#T##Int#>, name: <#T##String#>, photos: <#T##[String]#>, categories: <#T##[String]#>, address: <#T##String#>, latitude: <#T##Double#>, longitude: <#T##Double#>, phoneNumber: <#T##String#>, menuItems: <#T##[MenuItem]#>)
-        //        }
-        //
+//        if delegate != nil {
+//            let data = menu
+//            delegate?.userAddData(data: data!)
+//        }
         alertControl()
-        
-        
-        
     }
     
     func alertControl () {
         let alertController = UIAlertController(title: "Menu Item Added!", message: "Try a new one" , preferredStyle: .alert)
-        //        let cancelAction = UIAlertAction(title: "Cancel", style: .default) {(action) in
-        
-        //        }
-        //        alertController.addAction(cancelAction)
-        let OKAction = UIAlertAction(title: "OK", style: .cancel) { (action) in }
+        let OKAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+            self.dismiss(animated: true, completion: nil)
+        }
         alertController.addAction(OKAction)
         self.present(alertController, animated: true) {
             // optional code for what happens after the alert controller has finished presenting
@@ -66,12 +65,20 @@ class MenuViewController: UIViewController {
         }
     }
     
+//        //initiation the segue
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            let menuData = segue.destination as! CartViewController
     
+//        }
     
-    
-    @IBAction func exitTap(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+//
+//
+//        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            if segue.identifier == "menuDetail"{
+//                let menuVC: CartViewController = segue.destination as! CartViewController
+//                menuVC.menuItem =
+//            }
+//        }
     
     
     override func didReceiveMemoryWarning() {
