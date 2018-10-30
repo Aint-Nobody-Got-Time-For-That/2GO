@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34027D752187F27D0022A5FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34027D742187F27D0022A5FB /* Assets.xcassets */; };
 		34253F62217820DE00C2317A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34253F61217820DE00C2317A /* HomeViewController.swift */; };
 		34253F64217820F500C2317A /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34253F63217820F500C2317A /* RestaurantViewController.swift */; };
 		34253F662178218C00C2317A /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34253F652178218C00C2317A /* MenuViewController.swift */; };
 		34253F6D2179BE9400C2317A /* PosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34253F6C2179BE9400C2317A /* PosterCollectionViewCell.swift */; };
 		34253F75217AA64B00C2317A /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34253F74217AA64B00C2317A /* MenuTableViewCell.swift */; };
-		3439DFB4218167F0007A67BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3439DFB3218167EF007A67BC /* Assets.xcassets */; };
 		3439DFB821818124007A67BC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFB721818124007A67BC /* CartViewController.swift */; };
 		3439DFBA2181B31B007A67BC /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFB92181B31B007A67BC /* CartTableViewCell.swift */; };
 		3439DFBC21825A10007A67BC /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFBB21825A10007A67BC /* Cart.swift */; };
@@ -50,12 +50,12 @@
 /* Begin PBXFileReference section */
 		20FD50AE81C7BF87A8B22B78 /* Pods_2GOTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2GOTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D708C6049ACECEA051DBCE /* Pods-2GO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2GO/Pods-2GO.debug.xcconfig"; sourceTree = "<group>"; };
+		34027D742187F27D0022A5FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34253F61217820DE00C2317A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		34253F63217820F500C2317A /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
 		34253F652178218C00C2317A /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		34253F6C2179BE9400C2317A /* PosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		34253F74217AA64B00C2317A /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		3439DFB3218167EF007A67BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		3439DFB721818124007A67BC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3439DFB92181B31B007A67BC /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		3439DFBB21825A10007A67BC /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 				34BF3651216C482E00F474E1 /* LaunchScreen.storyboard */,
 				34BF3654216C482E00F474E1 /* Info.plist */,
 				578F5F35216EE993003EE2BE /* KeysSample.swift */,
-				3439DFB3218167EF007A67BC /* Assets.xcassets */,
+				34027D742187F27D0022A5FB /* Assets.xcassets */,
 			);
 			path = 2GO;
 			sourceTree = "<group>";
@@ -331,7 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BF3653216C482E00F474E1 /* LaunchScreen.storyboard in Resources */,
-				3439DFB4218167F0007A67BC /* Assets.xcassets in Resources */,
+				34027D752187F27D0022A5FB /* Assets.xcassets in Resources */,
 				34BF364E216C482D00F474E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
