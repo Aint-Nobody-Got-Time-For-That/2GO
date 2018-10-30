@@ -32,8 +32,5 @@ struct Restaurant {
         self.menuItems = menuItems
 
     }
-    
-//    class func searchWithTerm(term: String, sort: YelpSortMode?, categories: [String]?, limit: Int?, offset: Int?, completion: @escaping ([Restaurant]?, Error?) -> Void) -> Void {
-//        _ = YelpClient.sharedInstance.searchWithTerm(term, sort: sort, categories: categories, openNow: false, completion: completion)
-//    }
+
 }
