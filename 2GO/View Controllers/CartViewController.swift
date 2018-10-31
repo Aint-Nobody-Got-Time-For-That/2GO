@@ -27,12 +27,12 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return FakeData.carts.count
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
-        cell.menuPick = FakeData.carts[indexPath.item]
+//        cell.menuPick = FakeData.carts[indexPath.item]
         return cell
     }
     //
@@ -64,7 +64,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let deleteMenu = UIAlertController(title: nil, message: "Are you sure you want to delete this menu?", preferredStyle: .actionSheet)
             let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default) { (action) in
-                FakeData.carts.remove(at: indexPath.row)
+                // FakeData.carts.remove(at: indexPath.row)
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)

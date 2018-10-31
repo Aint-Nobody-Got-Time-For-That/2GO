@@ -7,14 +7,13 @@
 //
 
 import UIKit
+import ParseUI
 
 class MenuTableViewCell: UITableViewCell {
 
     @IBOutlet weak var menuCost: UILabel!
     @IBOutlet weak var menuTitle: UILabel!
-    @IBOutlet weak var menuImage: UIImageView!
-    
-    
+    @IBOutlet weak var menuImage: PFImageView!
     
     var menuItem: MenuItem! {
         didSet {
@@ -24,8 +23,10 @@ class MenuTableViewCell: UITableViewCell {
             self.menuImage.layer.borderColor = UIColor.clear.cgColor
             self.menuImage.layer.cornerRadius = menuImage.frame.height/2
             self.menuImage.clipsToBounds = true
-            self.menuImage.af_setImage(withURL: URL(string: menuItem.photo[0])!)
-            self.menuCost.text = String("$\(menuItem.menuCost)")
+            self.menuImage.file = menuItem.photo
+            self.menuImage.loadInBackground()
+            
+            self.menuCost.text = menuItem.price
         }
     }
    

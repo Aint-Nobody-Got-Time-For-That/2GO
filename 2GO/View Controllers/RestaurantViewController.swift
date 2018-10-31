@@ -22,8 +22,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var layoutView: UIView!
     
     var restaurant: Restaurant!
-    
-  
+    var resMenuItems: [MenuItem] = []
     
     @IBAction func addtoCart(_ sender: UIButton) {
         alertControl()
@@ -44,24 +43,23 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        self.tableView.reloadData()
         
         tableView.rowHeight = 145
         
         resName.text = restaurant.name
         resNumber.text = restaurant.phoneNumber
-        resAddress.text = restaurant.address
+        resAddress.text = "\(restaurant.street) \(restaurant.city) \(restaurant.state) \(restaurant.zipCode)"
      
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return restaurant.menuItems.count
+        return resMenuItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "resDetail", for: indexPath) as! MenuTableViewCell
         
-        cell.menuItem = restaurant.menuItems[indexPath.item]
+        cell.menuItem = resMenuItems[indexPath.item]
         return cell
     }
     
@@ -74,7 +72,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
 
         let indexPath = tableView.indexPath(for: cell)!
         let viewController = segue.destination as! MenuViewController
-        viewController.menu = restaurant.menuItems[indexPath.row]
+        viewController.menu = resMenuItems[indexPath.row]
 
     }
     
