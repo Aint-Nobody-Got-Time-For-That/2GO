@@ -122,6 +122,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="o4w-cr-kUR" customClass="PFImageView">
+                                <rect key="frame" x="0.0" y="64" width="414" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0B5-ty-KPW">
                                 <rect key="frame" x="0.0" y="245" width="414" height="491"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -226,11 +231,6 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="o4w-cr-kUR">
-                                <rect key="frame" x="0.0" y="64" width="414" height="182"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="de1-bC-oGW"/>
@@ -239,7 +239,7 @@
                         <outlet property="layoutView" destination="0B5-ty-KPW" id="jJp-I4-Yki"/>
                         <outlet property="menuSelection" destination="fnf-a9-ber" id="7YP-cc-MKL"/>
                         <outlet property="resAddress" destination="oKh-Bv-cyv" id="ifW-iS-bEq"/>
-                        <outlet property="resImage" destination="o4w-cr-kUR" id="wTN-5m-GjW"/>
+                        <outlet property="resImage" destination="o4w-cr-kUR" id="4yn-ej-vW0"/>
                         <outlet property="resName" destination="I0F-Gb-k2d" id="207-pJ-wdc"/>
                         <outlet property="resNumber" destination="agG-nk-rQw" id="jF0-S4-f1S"/>
                         <outlet property="resRatings" destination="oag-ek-2kf" id="VA9-aL-FFi"/>

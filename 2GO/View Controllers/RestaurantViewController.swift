@@ -7,14 +7,14 @@
 //
 
 import UIKit
-import AlamofireImage
+import ParseUI
 
 class RestaurantViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var lineImage: UIImageView!
     @IBOutlet weak var menuSelection: UILabel!
     @IBOutlet weak var resRatings: UIImageView!
-    @IBOutlet weak var resImage: UIImageView!
+    @IBOutlet weak var resImage: PFImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resName: UILabel!
     @IBOutlet weak var resNumber: UILabel!
@@ -22,7 +22,11 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var layoutView: UIView!
     
     var restaurant: Restaurant!
-    var resMenuItems: [MenuItem] = []
+    var resMenuItems: [MenuItem] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     @IBAction func addtoCart(_ sender: UIButton) {
         alertControl()
@@ -39,6 +43,22 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // get menu items
+        let menuItemQuery = PFQuery(className: "MenuItem")
+        menuItemQuery.whereKey("restaurant", equalTo: restaurant)
+        
+        menuItemQuery.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+            if error == nil, let items = objects {
+                self.resMenuItems = items as! [MenuItem]
+            } else {
+                print("Error in restaurant query: \(error!)")
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -49,6 +69,8 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         resName.text = restaurant.name
         resNumber.text = restaurant.phoneNumber
         resAddress.text = "\(restaurant.street) \(restaurant.city) \(restaurant.state) \(restaurant.zipCode)"
+        resImage.file = restaurant.photo
+        resImage.loadInBackground()
      
     }
     

@@ -31,10 +31,10 @@ class MenuViewController: UIViewController   {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        menuTitle.text = menu.description
+        menuTitle.text = menu.menuItemDescription
         menuImage.file = menu.photo
         menuDescription.text = menu.menuItemDescription
-        menuCost.text = menu.price
+        menuCost.text = "$\(menu.price)"
         subView.layer.cornerRadius = 5
         subView.clipsToBounds = true
         self.tabBarController?.tabBar.isHidden = false

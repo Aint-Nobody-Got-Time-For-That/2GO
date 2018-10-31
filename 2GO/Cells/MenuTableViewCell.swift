@@ -17,7 +17,7 @@ class MenuTableViewCell: UITableViewCell {
     
     var menuItem: MenuItem! {
         didSet {
-            self.menuTitle.text = menuItem.description
+            self.menuTitle.text = menuItem.menuItemDescription
             self.menuImage.layer.borderWidth = 4
             self.menuImage.layer.masksToBounds = false
             self.menuImage.layer.borderColor = UIColor.clear.cgColor
@@ -26,7 +26,7 @@ class MenuTableViewCell: UITableViewCell {
             self.menuImage.file = menuItem.photo
             self.menuImage.loadInBackground()
             
-            self.menuCost.text = menuItem.price
+            self.menuCost.text = "$\(menuItem.price)"
         }
     }
    
