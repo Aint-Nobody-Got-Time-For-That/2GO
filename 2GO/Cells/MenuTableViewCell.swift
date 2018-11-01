@@ -26,6 +26,8 @@ class MenuTableViewCell: UITableViewCell {
             self.menuImage.clipsToBounds = true
             self.menuImage.af_setImage(withURL: URL(string: menuItem.photo[0])!)
             self.menuCost.text = String("$\(menuItem.menuCost)")
+           
+
         }
     }
    

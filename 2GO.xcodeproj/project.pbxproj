@@ -124,6 +124,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		34027D76218833BD0022A5FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		34253F672179B2FA00C2317A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +166,7 @@
 		34BF3647216C482D00F474E1 /* 2GO */ = {
 			isa = PBXGroup;
 			children = (
+				34027D76218833BD0022A5FB /* View */,
 				34253F672179B2FA00C2317A /* Cells */,
 				57726ABA21702BED006E8CDA /* View Controllers */,
 				57726ABC21702C09006E8CDA /* Model */,
