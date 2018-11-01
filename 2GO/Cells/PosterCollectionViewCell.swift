@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import AlamofireImage
+import ParseUI
 
 class PosterCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var resPhoto: UIImageView!
+    @IBOutlet weak var resPhoto: PFImageView!
     
     @IBOutlet weak var resName: UILabel!
     
@@ -39,9 +39,10 @@ class PosterCollectionViewCell: UICollectionViewCell {
     var restaurant: Restaurant! {
         didSet {
             self.resName.text = restaurant.name
-            self.resPhoto.af_setImage(withURL: URL(string: restaurant.photos[0])!)
-            self.catagoriesLabel.text = categoriesString(restaurant.categories)
-            
+//            self.resPhoto.af_setImage(withURL: URL(string: restaurant.photos[0])!)
+//            self.catagoriesLabel.text = categoriesString(restaurant.categories)
+            resPhoto.file = restaurant.photo
+            resPhoto.loadInBackground()
         
         }
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import ParseUI
 
 //protocol DataSentDelegate {
 //    func userAddData(data: MenuItem)
@@ -20,7 +21,7 @@ class MenuViewController: UIViewController   {
     @IBOutlet weak var menuCost: UILabel!
     @IBOutlet weak var ratingImage: UIImageView!
     @IBOutlet weak var subView: UIView!
-    @IBOutlet weak var menuImage: UIImageView!
+    @IBOutlet weak var menuImage: PFImageView!
     
     var menu: MenuItem!
 //    var delegate: DataSentDelegate? = nil
@@ -30,10 +31,10 @@ class MenuViewController: UIViewController   {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        menuTitle.text = menu.description
-        menuImage.af_setImage(withURL: URL(string: menu.photo[0])!)
-        menuDescription.text = menu.menuDescription
-        menuCost.text = String("$\(menu.menuCost)")
+        menuTitle.text = menu.menuItemDescription
+        menuImage.file = menu.photo
+        menuDescription.text = menu.menuItemDescription
+        menuCost.text = "$\(menu.price)"
         subView.layer.cornerRadius = 5
         subView.clipsToBounds = true
         self.tabBarController?.tabBar.isHidden = false

@@ -7,25 +7,16 @@
 //
 
 import Foundation
+import Parse
 
-struct MenuItem {
-    let id: Int
-    let photo: [String]
-    let description: String
-    let menuDescription: String
-    let menuCost: Double
+class MenuItem: PFObject, PFSubclassing {
     
-
-    // TODO: might not need these properties right now.
-//    let rating: Double
-//    let reviews: [String]
-//    let allegeries: String
+    @NSManaged var photo: PFFile
+    @NSManaged var menuItemDescription: String
+    @NSManaged var price: String
+    @NSManaged var name: String
     
-    init(id: Int, photo: [String], description: String, menuDescription: String, menuCost: Double) {
-        self.id = id
-        self.photo = photo
-        self.description = description
-        self.menuDescription = menuDescription
-        self.menuCost = menuCost
+    static func parseClassName() -> String {
+        return "MenuItem"
     }
 }
