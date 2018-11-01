@@ -19,7 +19,6 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var resNumber: UILabel!
     @IBOutlet weak var resAddress: UILabel!
     @IBOutlet weak var layoutView: UIView!
-    @IBOutlet weak var resImage: UIImageView!
     //    @IBOutlet weak var imageLayoutView: UIView!
     
     var restaurant: Restaurant!
