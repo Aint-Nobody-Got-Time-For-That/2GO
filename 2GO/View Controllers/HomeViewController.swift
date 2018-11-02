@@ -10,16 +10,23 @@ import UIKit
 import AlamofireImage
 import Parse
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchView: UIView!
     
+    var filteredRestaurants: [Restaurant] = []
     var restaurants: [Restaurant] = [] {
         didSet {
             collectionView.reloadData()
         }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredRestaurants = searchText.isEmpty ? restaurants : restaurants.filter{( $0["name"] as! String).range( of:searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        self.collectionView.reloadData()
     }
     
     var imageView = UIImageView()
@@ -36,7 +43,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return restaurants.count
+        return filteredRestaurants.count
     }
     
     fileprivate func layOut(_ cell: PosterCollectionViewCell) {
@@ -52,11 +59,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PosterCell", for: indexPath) as! PosterCollectionViewCell
-        cell.restaurant = restaurants[indexPath.row]
+        cell.restaurant = filteredRestaurants[indexPath.row]
         layOut(cell)
         
         return cell
     }
+    
+    
     
 //    func drawImagesAndText() {
 //        // 1
@@ -101,6 +110,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         restaurantQuery.findObjectsInBackground { (objects: [PFObject]!, error: Error?) in
             if error == nil, let restaurants = objects {
                 self.restaurants = restaurants as! [Restaurant]
+                self.filteredRestaurants = restaurants as! [Restaurant]
             } else {
                 print("Error in restaurant query in HomeViewController view did Appear: \(error!)")
             }
@@ -111,6 +121,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        searchBar.delegate = self
         collectionLayout()
         imageView.image = UIImage(named: "food") //Home view Image
         collectionView.contentInset = UIEdgeInsetsMake(190, 0, 0, 0)
@@ -131,4 +142,5 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         imageView.frame = CGRect(x: 0, y: 50, width: UIScreen.main.bounds.size.width, height: height)
     
     }
+
 }
