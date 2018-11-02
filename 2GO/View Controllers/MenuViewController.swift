@@ -10,11 +10,7 @@ import UIKit
 import AlamofireImage
 import ParseUI
 
-//protocol DataSentDelegate {
-//    func userAddData(data: MenuItem)
-//}
-
-class MenuViewController: UIViewController   {
+class MenuViewController: UIViewController {
     
     @IBOutlet weak var menuDescription: UILabel!
     @IBOutlet weak var menuTitle: UILabel!
@@ -24,14 +20,11 @@ class MenuViewController: UIViewController   {
     @IBOutlet weak var menuImage: PFImageView!
     
     var menu: MenuItem!
-//    var delegate: DataSentDelegate? = nil
-    
     var counterItem = 0
-    //    var title: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        menuTitle.text = menu.menuItemDescription
+        menuTitle.text = menu.name
         menuImage.file = menu.photo
         menuDescription.text = menu.menuItemDescription
         menuCost.text = "$\(menu.price)"

@@ -17,7 +17,7 @@ class MenuTableViewCell: UITableViewCell {
     
     var menuItem: MenuItem! {
         didSet {
-            self.menuTitle.text = menuItem.menuItemDescription
+            self.menuTitle.text = menuItem.name
             self.menuImage.layer.borderWidth = 4
             self.menuImage.layer.masksToBounds = false
             self.menuImage.layer.borderColor = UIColor.clear.cgColor
