@@ -36,7 +36,6 @@ class MenuViewController: UIViewController   {
         menuCost.text = String("$\(menu.menuCost)")
         subView.layer.cornerRadius = 5
         subView.clipsToBounds = true
-        self.tabBarController?.tabBar.isHidden = false
         
         // Do any additional setup after loading the view.
     }

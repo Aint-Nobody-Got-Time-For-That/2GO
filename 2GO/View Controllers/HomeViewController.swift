@@ -11,13 +11,15 @@ import AlamofireImage
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     
+    @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     var restaurant: Restaurant!
     
-    var imageView = UIImageView()
     var searchController = UISearchController()
     
     
@@ -26,10 +28,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = layout.minimumInteritemSpacing
-        let cellsPerLine: CGFloat = 2
+        let cellsPerLine: CGFloat = 1
         let interItemSpacing = layout.minimumInteritemSpacing * (cellsPerLine - 1)
         let widthCell = collectionView.frame.width / cellsPerLine - interItemSpacing / cellsPerLine
-        layout.itemSize = CGSize(width: widthCell - 4, height: widthCell + 6)
+        layout.itemSize = CGSize(width: widthCell - 26, height: widthCell - 160)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -47,6 +49,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.cornerRadius = 5
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PosterCell", for: indexPath) as! PosterCollectionViewCell
         cell.restaurant = FakeData.restaurants[indexPath.row]
@@ -55,6 +59,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.75) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
+        }
+        
+    }
     
     
     //initiation the segue
@@ -63,28 +77,26 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let indexPath = collectionView.indexPath(for: cell)!
         let viewController = segue.destination as! RestaurantViewController
         viewController.restaurant = FakeData.restaurants[indexPath.item]
-        self.tabBarController?.tabBar.isHidden = false
-        
+ 
     }
-    
-    func imageWith(name: String?) -> UIImage? {
-        imageView.image = UIImage(named: "food")
-        let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        let nameLabel = UILabel(frame: frame)
-        nameLabel.textAlignment = .center
-        nameLabel.backgroundColor = .lightGray
-        nameLabel.textColor = .white
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 40)
-        nameLabel.text = name
-        UIGraphicsBeginImageContext(frame.size)
-        if let currentContext = UIGraphicsGetCurrentContext() {
-            nameLabel.layer.render(in: currentContext)
-            let nameImage = UIGraphicsGetImageFromCurrentImageContext()
-            return nameImage
-        }
-        return nil
-    }
-    
+    //
+    //    func imageWith(name: String?) -> UIImage? {
+    //        let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+    //        let nameLabel = UILabel(frame: frame)
+    //        nameLabel.textAlignment = .center
+    //        nameLabel.backgroundColor =
+    //        nameLabel.textColor = .white
+    //        nameLabel.font = UIFont.boldSystemFont(ofSize: 40)
+    //        nameLabel.text = name
+    //        UIGraphicsBeginImageContext(frame.size)
+    //        if let currentContext = UIGraphicsGetCurrentContext() {
+    //            nameLabel.layer.render(in: currentContext)
+    //            let nameImage = UIGraphicsGetImageFromCurrentImageContext()
+    //            return nameImage
+    //        }
+    //        return nil
+    //    }
+    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,30 +104,31 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionView.delegate = self
         collectionLayout()
         searchBar.delegate = self
-//        imageView.image =  UIImage(named: "food")//Home view Image
-        collectionView.contentInset = UIEdgeInsetsMake(190, 0, 0, 0)
-        collectionView.backgroundColor = UIColor.white
-      
-        imageView.image = imageWith(name: "WHAT CAN I DO FOR YOU")
-    
-        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 300)
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        view.addSubview(imageView)
-        view.addSubview(searchView)
-        navigationItem.hidesSearchBarWhenScrolling = true
+        imageView.image =  UIImage(named: "food")//Home view Image
+        
+        ////        collectionView.contentOffset = CGPoint(x:0, y: -40 )
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        
+        
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
+        
         // Do any additional setup after loading the view.
     }
     
-
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = 365 - (scrollView.contentOffset.y + 300)
-        let height = min(max(y, 60), 400)
-        imageView.frame = CGRect(x: 0, y: 50, width: UIScreen.main.bounds.size.width, height: height)
+    //
+    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    //        let y = 365 - (scrollView.contentOffset.y + 300)
+    //        let height = min(max(y, 60), 400)
+    //        imageView.frame = CGRect(x: 0, y: 50, width: UIScreen.main.bounds.size.width, height: height)
+    //          self.navigationController?.hidesBarsOnSwipe = false
+    //
+    //
+    //    }
     
-    }
-
     
     
 }
