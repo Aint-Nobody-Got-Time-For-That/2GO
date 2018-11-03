@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -14,7 +15,38 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     var cartMenu: Cart!
+    
+    var resMenuItems: [MenuItem] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     var index = 0
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let defaults = UserDefaults.standard
+    
+        if defaults.array(forKey: "cart") != nil {
+            let cart = defaults.array(forKey: "cart") as! [String]
+            let query:PFQuery =  PFQuery(className: "MenuItem")
+            query.whereKey("objectId", containedIn: cart)
+            query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
+                if error == nil, let items = objects {
+                    self.resMenuItems = items as! [MenuItem]
+                    print(self.resMenuItems)
+                } else {
+                    print("Error in restaurant query: \(error!)")
+                }
+            }
+            
+            
+        }
+    
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +59,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return resMenuItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
