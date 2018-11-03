@@ -40,10 +40,19 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func addtoCart(_ sender: UIButton) {
-//        if delegate != nil {
-//            let data = menu
-//            delegate?.userAddData(data: data!)
-//        }
+        let defaults = UserDefaults.standard
+        if defaults.array(forKey: "cart") != nil {
+            var cart = defaults.array(forKey:"cart") as! [String]
+            cart.append(menu.objectId!)
+            defaults.set(cart, forKey: "cart")
+            defaults.synchronize()
+        } else {
+            // cart dne so create
+            var cart: [String] = []
+            cart.append(menu.objectId!)
+            defaults.set(cart, forKey: "cart")
+            defaults.synchronize()
+        }
         alertControl()
     }
     
