@@ -7,22 +7,23 @@
 //
 
 import UIKit
+import ParseUI
 
 class CartTableViewCell: UITableViewCell {
     
     
     @IBOutlet weak var menuName: UILabel!
     @IBOutlet weak var menuCost: UILabel!
-    @IBOutlet weak var menuImage: UIImageView!
-        
-        var menuPick: Cart! {
-            didSet {
-                self.menuName.text = menuPick.name
-                self.menuCost.text = String("$\(menuPick.menuCost)")
-                self.menuImage.af_setImage(withURL: URL(string: menuPick.photo[0])!)
-            }
+    @IBOutlet weak var menuImage: PFImageView!
+    
+    var menuItem: MenuItem! {
+        didSet {
+            self.menuName.text = menuItem.name
+            self.menuCost.text = String("$\(menuItem.price)")
+            self.menuImage.file = menuItem.photo
+            self.menuImage.loadInBackground()
+        }
         
     }
-    
 
 }

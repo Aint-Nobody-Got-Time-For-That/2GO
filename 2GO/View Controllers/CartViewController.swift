@@ -15,10 +15,13 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     
     var cartMenu: Cart!
+    var delete = false
     
     var resMenuItems: [MenuItem] = [] {
         didSet {
-            tableView.reloadData()
+            if(!delete) {
+                tableView.reloadData()
+            }
         }
     }
     
@@ -36,16 +39,11 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
                 if error == nil, let items = objects {
                     self.resMenuItems = items as! [MenuItem]
-                    print(self.resMenuItems)
                 } else {
                     print("Error in restaurant query: \(error!)")
                 }
             }
-            
-            
         }
-    
-        
     }
     
     override func viewDidLoad() {
@@ -64,7 +62,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
-//        cell.menuPick = FakeData.carts[indexPath.item]
+        cell.menuItem = resMenuItems[indexPath.row]
         return cell
     }
     //
@@ -91,12 +89,22 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+       
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath: IndexPath!) -> Void in
-            
             
             let deleteMenu = UIAlertController(title: nil, message: "Are you sure you want to delete this menu?", preferredStyle: .actionSheet)
             let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default) { (action) in
-                // FakeData.carts.remove(at: indexPath.row)
+                self.delete = true
+                let defaults = UserDefaults.standard
+                self.resMenuItems.remove(at: indexPath.row)
+                
+                var cart: [String] = []
+                for item in self.resMenuItems {
+                    cart.append(item.objectId!)
+                }
+                defaults.set(cart, forKey: "cart")
+                defaults.synchronize()
+                self.delete = false
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
