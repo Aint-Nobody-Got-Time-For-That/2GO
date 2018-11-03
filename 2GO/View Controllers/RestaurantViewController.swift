@@ -39,6 +39,24 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func addtoCart(_ sender: UIButton) {
+        guard let cell = sender.superview?.superview as? MenuTableViewCell else {
+            return
+        }
+        
+        let objectId = cell.menuItem.objectId!
+        let defaults = UserDefaults.standard
+        if defaults.array(forKey: "cart") != nil {
+            var cart = defaults.array(forKey:"cart") as! [String]
+            cart.append(objectId)
+            defaults.set(cart, forKey: "cart")
+            defaults.synchronize()
+        } else {
+            // cart dne so create
+            var cart: [String] = []
+            cart.append(objectId)
+            defaults.set(cart, forKey: "cart")
+            defaults.synchronize()
+        }
         alertControl()
     }
     
