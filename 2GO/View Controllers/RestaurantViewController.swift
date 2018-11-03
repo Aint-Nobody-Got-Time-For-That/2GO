@@ -45,26 +45,26 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         
         let objectId = cell.menuItem.objectId!
         let defaults = UserDefaults.standard
-        if defaults.array(forKey: "cart") != nil {
-            var cart = defaults.array(forKey:"cart") as! [String]
+        var cart = defaults.array(forKey:"cart") as! [String]
+        
+        // if the item is in not the cart, append
+        if !cart.contains(objectId) {
             cart.append(objectId)
             defaults.set(cart, forKey: "cart")
             defaults.synchronize()
+            alertControl("Added")
         } else {
-            // cart dne so create
-            var cart: [String] = []
-            cart.append(objectId)
-            defaults.set(cart, forKey: "cart")
-            defaults.synchronize()
+            alertControl("Try a new one")
         }
-        alertControl()
     }
     
-    func alertControl () {
-        let alertController = UIAlertController(title: "Menu Item Added!", message: "Try a new one" , preferredStyle: .alert)
+    func alertControl (_ message: String) {
+        let alertController = UIAlertController(title: "Adding!", message: message, preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: .cancel) { (action) in
+            
         }
         alertController.addAction(OKAction)
+        
         self.present(alertController, animated: true) {
             // optional code for what happens after the alert controller has finished presenting
             
@@ -81,7 +81,6 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         menuItemQuery.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if error == nil, let items = objects {
                 self.resMenuItems = items as! [MenuItem]
-                print(self.resMenuItems)
             } else {
                 print("Error in restaurant query: \(error!)")
             }
