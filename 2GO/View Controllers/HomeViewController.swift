@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import StretchHeader
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     
@@ -70,6 +71,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
+    func searchBarEdit() {
+        searchBar.layer.shadowRadius = 2.0
+        searchBar.layer.shadowOpacity = 1.0
+        searchBar.layer.shadowColor = UIColor.gray.cgColor
+        searchBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+    }
+    
     
     //initiation the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -79,24 +87,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         viewController.restaurant = FakeData.restaurants[indexPath.item]
  
     }
-    //
-    //    func imageWith(name: String?) -> UIImage? {
-    //        let frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-    //        let nameLabel = UILabel(frame: frame)
-    //        nameLabel.textAlignment = .center
-    //        nameLabel.backgroundColor =
-    //        nameLabel.textColor = .white
-    //        nameLabel.font = UIFont.boldSystemFont(ofSize: 40)
-    //        nameLabel.text = name
-    //        UIGraphicsBeginImageContext(frame.size)
-    //        if let currentContext = UIGraphicsGetCurrentContext() {
-    //            nameLabel.layer.render(in: currentContext)
-    //            let nameImage = UIGraphicsGetImageFromCurrentImageContext()
-    //            return nameImage
-    //        }
-    //        return nil
-    //    }
-    //
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,11 +95,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         collectionLayout()
         searchBar.delegate = self
         imageView.image =  UIImage(named: "food")//Home view Image
-        
+        searchBarEdit()
         ////        collectionView.contentOffset = CGPoint(x:0, y: -40 )
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-        
-        
+     
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -128,6 +117,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     //
     //
     //    }
+   
     
     
     
