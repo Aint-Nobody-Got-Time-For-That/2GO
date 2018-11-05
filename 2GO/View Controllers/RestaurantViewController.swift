@@ -47,9 +47,11 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         let defaults = UserDefaults.standard
         if defaults.array(forKey: "cart") != nil {
             var cart = defaults.array(forKey:"cart") as! [String]
-            cart.append(objectId)
-            defaults.set(cart, forKey: "cart")
-            defaults.synchronize()
+            if !cart.contains(objectId) {
+                cart.append(objectId)
+                defaults.set(cart, forKey: "cart")
+                defaults.synchronize()
+            }
         } else {
             // cart dne so create
             var cart: [String] = []

@@ -43,9 +43,11 @@ class MenuViewController: UIViewController {
         let defaults = UserDefaults.standard
         if defaults.array(forKey: "cart") != nil {
             var cart = defaults.array(forKey:"cart") as! [String]
-            cart.append(menu.objectId!)
-            defaults.set(cart, forKey: "cart")
-            defaults.synchronize()
+            if !cart.contains(menu.objectId!) {
+                cart.append(menu.objectId!)
+                defaults.set(cart, forKey: "cart")
+                defaults.synchronize()
+            }
         } else {
             // cart dne so create
             var cart: [String] = []
