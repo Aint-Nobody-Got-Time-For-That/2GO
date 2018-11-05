@@ -10,19 +10,19 @@ import UIKit
 import AlamofireImage
 import StretchHeader
 
+
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var searchView: UIView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageViewTest: UIImageView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
+
     
     var restaurant: Restaurant!
-    
-    var searchController = UISearchController()
-    
+    var imageArray = [UIImage]()
     
     fileprivate func collectionLayout() {
         //dynamically layout the rows for the cells
@@ -32,7 +32,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cellsPerLine: CGFloat = 1
         let interItemSpacing = layout.minimumInteritemSpacing * (cellsPerLine - 1)
         let widthCell = collectionView.frame.width / cellsPerLine - interItemSpacing / cellsPerLine
-        layout.itemSize = CGSize(width: widthCell - 26, height: widthCell - 160)
+        layout.itemSize = CGSize(width: widthCell - 29, height: widthCell - 179)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -48,6 +48,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         cell.layer.cornerRadius = 5
+    
     }
     
     
@@ -56,6 +57,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PosterCell", for: indexPath) as! PosterCollectionViewCell
         cell.restaurant = FakeData.restaurants[indexPath.row]
         layOut(cell)
+        
         
         return cell
     }
@@ -85,24 +87,50 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let indexPath = collectionView.indexPath(for: cell)!
         let viewController = segue.destination as! RestaurantViewController
         viewController.restaurant = FakeData.restaurants[indexPath.item]
- 
+        
     }
+    
+    func imageSwipper() {
+        imageArray = [#imageLiteral(resourceName: "avocado-toast") ,#imageLiteral(resourceName: "lexie-barnhorn-583894-unsplash") ,#imageLiteral(resourceName: "acai-bowl") , #imageLiteral(resourceName: "jelleke-vanooteghem-400034-unsplash"),#imageLiteral(resourceName: "taco5") ]
+        for i in 0..<imageArray.count {
+            let imageView = UIImageView()
+            imageView.image = imageArray[i]
+            imageView.contentMode = .scaleAspectFill
+            let xPos = self.scrollView.frame.width * CGFloat(i)
+            imageView.frame = CGRect(x: xPos, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+            
+            scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
+            scrollView.addSubview(imageView)
+        
+     
+        }
+    }
+    
+    
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionLayout()
-        searchBar.delegate = self
-        imageView.image =  UIImage(named: "food")//Home view Image
-        searchBarEdit()
-        ////        collectionView.contentOffset = CGPoint(x:0, y: -40 )
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
-     
         
+        
+        //        imageView.image =  UIImage(named: "food")//Home view Image
+        
+        searchBar.delegate = self
+        searchBarEdit()
+        
+        //swipping image view
+        scrollView.frame.width == view.frame.width
+        imageSwipper()
+        
+        
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        
         
         // Do any additional setup after loading the view.
     }
@@ -117,7 +145,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     //
     //
     //    }
-   
+    
     
     
     

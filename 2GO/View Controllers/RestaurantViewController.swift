@@ -74,7 +74,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 145
+        tableView.rowHeight = 135
 
         resName.text = restaurant.name
         resNumber.text = restaurant.phoneNumber
@@ -96,6 +96,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
 
         
     }
+  
    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
