@@ -46,24 +46,16 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         let objectId = cell.menuItem.objectId!
         let defaults = UserDefaults.standard
         
-        if defaults.array(forKey: "cart") != nil {
-            var cart = defaults.array(forKey:"cart") as! [String]
-            if !cart.contains(objectId) {
-                cart.append(objectId)
-                defaults.set(cart, forKey: "cart")
-                defaults.synchronize()
-                alertControl("Dish Added!")
-            } else {
-                alertControl("Already in Cart")
-            }
-        } else {
-            // cart dne so create
-            var cart: [String] = []
+        var cart = defaults.array(forKey:"cart") as! [String]
+        if !cart.contains(objectId) {
             cart.append(objectId)
             defaults.set(cart, forKey: "cart")
             defaults.synchronize()
             alertControl("Dish Added!")
+        } else {
+            alertControl("Already in Cart")
         }
+    
     }
     
     func alertControl (_ title: String) {
