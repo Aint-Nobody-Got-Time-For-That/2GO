@@ -85,6 +85,7 @@ class MenuViewController: UIViewController {
             self.dismiss(animated: true, completion: nil)
         }
         alertController.addAction(OKAction)
+        
         self.present(alertController, animated: true) {
             // optional code for what happens after the alert controller has finished presenting
             
