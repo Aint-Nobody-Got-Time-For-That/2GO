@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
 
@@ -30,6 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
         )
 
+        
+        UINavigationBar.appearance().tintColor = UIColor.white
+       
+        
+        if let fontStyle = UIFont(name: "ArialHebrew-Bold", size: 19) {
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font: fontStyle]
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.gray]
+        }
+        
         return true
     }
 
@@ -56,5 +65,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension UIApplication {
+    var statusBarView: UIView? {
+        return value(forKey: "statusBar") as? UIView
+    }
 }
 

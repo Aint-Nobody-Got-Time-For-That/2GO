@@ -14,7 +14,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var filteredRestaurants: [Restaurant] = []
     var restaurants: [Restaurant] = [] {
@@ -29,17 +29,18 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         self.collectionView.reloadData()
     }
     
-    var imageView = UIImageView()
+    var restaurant: Restaurant!
+    var imageArray = [UIImage]()
     
     fileprivate func collectionLayout() {
         //dynamically layout the rows for the cells
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = layout.minimumInteritemSpacing
-        let cellsPerLine: CGFloat = 2
+        let cellsPerLine: CGFloat = 1
         let interItemSpacing = layout.minimumInteritemSpacing * (cellsPerLine - 1)
         let widthCell = collectionView.frame.width / cellsPerLine - interItemSpacing / cellsPerLine
-        layout.itemSize = CGSize(width: widthCell - 4, height: widthCell + 6)
+        layout.itemSize = CGSize(width: widthCell - 29, height: widthCell - 179)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,6 +56,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         cell.layer.cornerRadius = 5
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -92,10 +94,28 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 //        imageView.image = img
 //    }
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
+        cell.layer.transform = rotationTransform
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.75) {
+            cell.layer.transform = CATransform3DIdentity
+            cell.alpha = 1.0
+        }
+        
+    }
+    
+    func searchBarEdit() {
+        searchBar.layer.shadowRadius = 2.0
+        searchBar.layer.shadowOpacity = 1.0
+        searchBar.layer.shadowColor = UIColor.gray.cgColor
+        searchBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+    }
+    
+    
     //initiation the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as! UICollectionViewCell
-        
         let indexPath = collectionView.indexPath(for: cell)!
         let viewController = segue.destination as! RestaurantViewController
         viewController.restaurant = restaurants[indexPath.item]
@@ -117,30 +137,42 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    @objc func imageSwipper() {
+        imageArray = [#imageLiteral(resourceName: "avocado-toast") ,#imageLiteral(resourceName: "lexie-barnhorn-583894-unsplash") ,#imageLiteral(resourceName: "acai-bowl") , #imageLiteral(resourceName: "jelleke-vanooteghem-400034-unsplash"),#imageLiteral(resourceName: "taco5") ]
+        for i in 0..<imageArray.count {
+            let imageView = UIImageView()
+            imageView.image = imageArray[i]
+            imageView.contentMode = .scaleAspectFill
+            let xPos = self.scrollView.frame.width * CGFloat(i)
+            imageView.frame = CGRect(x: xPos, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+        
+            scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
+            scrollView.addSubview(imageView)
+            
+            
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         searchBar.delegate = self
         collectionLayout()
-        imageView.image = UIImage(named: "food") //Home view Image
-        collectionView.contentInset = UIEdgeInsetsMake(190, 0, 0, 0)
-        collectionView.backgroundColor = UIColor.white
-      
-        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 300)
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        view.addSubview(imageView)
-        view.addSubview(searchView)
-        navigationItem.hidesSearchBarWhenScrolling = true
+        
+        searchBar.delegate = self
+        searchBarEdit()
+        
+        //swipping image view
+        scrollView.frame.width == view.frame.width
+        imageSwipper()
+        
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        
         // Do any additional setup after loading the view.
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = 365 - (scrollView.contentOffset.y + 300)
-        let height = min(max(y, 60), 400)
-        imageView.frame = CGRect(x: 0, y: 50, width: UIScreen.main.bounds.size.width, height: height)
-    
     }
 
 }
