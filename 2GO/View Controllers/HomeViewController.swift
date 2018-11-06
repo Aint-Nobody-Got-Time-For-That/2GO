@@ -16,10 +16,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var imageViewTest: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
-
+    
     
     var restaurant: Restaurant!
     var imageArray = [UIImage]()
@@ -48,7 +47,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         cell.layer.cornerRadius = 5
-    
+        
     }
     
     
@@ -90,7 +89,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
-    func imageSwipper() {
+    @objc func imageSwipper() {
         imageArray = [#imageLiteral(resourceName: "avocado-toast") ,#imageLiteral(resourceName: "lexie-barnhorn-583894-unsplash") ,#imageLiteral(resourceName: "acai-bowl") , #imageLiteral(resourceName: "jelleke-vanooteghem-400034-unsplash"),#imageLiteral(resourceName: "taco5") ]
         for i in 0..<imageArray.count {
             let imageView = UIImageView()
@@ -98,17 +97,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
             imageView.contentMode = .scaleAspectFill
             let xPos = self.scrollView.frame.width * CGFloat(i)
             imageView.frame = CGRect(x: xPos, y: 0, width: self.scrollView.frame.width, height: self.scrollView.frame.height)
-            
+        
             scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
             scrollView.addSubview(imageView)
-        
-     
+            
+            
         }
     }
     
-    
-   
-    
+
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,7 +123,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         //swipping image view
         scrollView.frame.width == view.frame.width
         imageSwipper()
-        
         
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)

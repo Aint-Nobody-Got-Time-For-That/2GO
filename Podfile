@@ -11,9 +11,6 @@ target '2GO' do
 	pod 'PKHUD', '~> 5.0'
 	pod 'Parse' 
 	pod 'ParseUI'
-    pod 'StretchHeader'
-    pod 'ImageSlideshow', '~> 1.6'
-    pod "ImageSlideshow/Alamofire"
 
   target '2GOTests' do
     inherit! :search_paths
