@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         )
 
         
-        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = UIColor.black
        
         
         if let fontStyle = UIFont(name: "ArialHebrew-Bold", size: 19) {

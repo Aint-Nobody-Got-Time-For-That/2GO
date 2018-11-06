@@ -18,8 +18,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     
     
-    
-    
     var cartMenu: Cart!
     var delete = false
     
@@ -53,9 +51,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 121
-
-        orderButton.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
+      
     }
     
     
