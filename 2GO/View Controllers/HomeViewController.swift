@@ -68,32 +68,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     
-    
-//    func drawImagesAndText() {
-//        // 1
-//        let renderer = UIGraphicsImageRenderer(size: CGSize(width: 512, height: 512))
-//
-//        let img = renderer.image { ctx in
-//            // 2
-//            let paragraphStyle = NSMutableParagraphStyle()
-//            paragraphStyle.alignment = .center
-//
-//            // 3
-//            let attrs = [NSAttributedString.font: UIFont(name: "HelveticaNeue-Thin", size: 36)!, NSAttributedString.Key.paragraphStyle: paragraphStyle]
-//
-//            // 4
-//            let string = "The best-laid schemes o'\nmice an' men gang aft agley"
-//            string.draw(with: CGRect(x: 32, y: 32, width: 448, height: 448), options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
-//
-//            // 5
-//            let mouse = UIImage(named: "mouse")
-//            mouse?.draw(at: CGPoint(x: 300, y: 150))
-//        }
-//
-//        // 6
-//        imageView.image = img
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let rotationTransform = CATransform3DTranslate(CATransform3DIdentity, 0, 20, 0)
         cell.layer.transform = rotationTransform

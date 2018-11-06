@@ -33,7 +33,7 @@ class MenuViewController: UIViewController {
         subView.layer.cornerRadius = 5
         subView.clipsToBounds = true
         self.tabBarController?.tabBar.isHidden = false
-        
+     
         subViewEdit()
         menuImage.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 300)
         menuImage.contentMode = .scaleAspectFill
@@ -57,11 +57,7 @@ class MenuViewController: UIViewController {
         subView.layer.shadowOffset = CGSize(width: 0, height: 5.0)
     
     }
-    
-    @IBAction func savetoCart(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "menuDetail", sender: nil)
-    }
-    
+
     @IBAction func addtoCart(_ sender: UIButton) {
         
         let objectId = menu.objectId!
@@ -72,12 +68,17 @@ class MenuViewController: UIViewController {
             cart.append(objectId)
             defaults.set(cart, forKey: "cart")
             defaults.synchronize()
-            alertControl("Dish Added!")
+            alertControl("Menu Item Added")
         } else {
-            alertControl("Already in Cart.")
+            alertControl("Item Existed in Cart")
         }
         
     }
+    
+    @IBAction func exitOnTap(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     func alertControl(_ title: String) {
         let alertController = UIAlertController(title: title, message: "", preferredStyle: .alert)

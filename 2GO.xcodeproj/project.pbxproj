@@ -16,6 +16,7 @@
 		3439DFB821818124007A67BC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFB721818124007A67BC /* CartViewController.swift */; };
 		3439DFBA2181B31B007A67BC /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFB92181B31B007A67BC /* CartTableViewCell.swift */; };
 		3439DFBC21825A10007A67BC /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFBB21825A10007A67BC /* Cart.swift */; };
+		34658C6C2192234E00345C3A /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C6B2192234E00345C3A /* OrderViewController.swift */; };
 		34BF3649216C482D00F474E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF3648216C482D00F474E1 /* AppDelegate.swift */; };
 		34BF364E216C482D00F474E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BF364C216C482D00F474E1 /* Main.storyboard */; };
 		34BF3653216C482E00F474E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BF3651216C482E00F474E1 /* LaunchScreen.storyboard */; };
@@ -60,6 +61,7 @@
 		3439DFB721818124007A67BC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		3439DFB92181B31B007A67BC /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		3439DFBB21825A10007A67BC /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		34658C6B2192234E00345C3A /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
 		34BF3645216C482D00F474E1 /* 2GO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2GO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BF3648216C482D00F474E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BF364D216C482D00F474E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 				34253F63217820F500C2317A /* RestaurantViewController.swift */,
 				34253F652178218C00C2317A /* MenuViewController.swift */,
 				3439DFB721818124007A67BC /* CartViewController.swift */,
+				34658C6B2192234E00345C3A /* OrderViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				34253F62217820DE00C2317A /* HomeViewController.swift in Sources */,
 				3439DFB821818124007A67BC /* CartViewController.swift in Sources */,
 				34253F662178218C00C2317A /* MenuViewController.swift in Sources */,
+				34658C6C2192234E00345C3A /* OrderViewController.swift in Sources */,
 				57E43702218A4FFF0088A8A5 /* Keys.swift in Sources */,
 				34253F6D2179BE9400C2317A /* PosterCollectionViewCell.swift in Sources */,
 				34253F75217AA64B00C2317A /* MenuTableViewCell.swift in Sources */,

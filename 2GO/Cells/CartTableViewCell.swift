@@ -20,6 +20,11 @@ class CartTableViewCell: UITableViewCell {
         didSet {
             self.menuName.text = menuItem.name
             self.menuCost.text = String("$\(menuItem.price)")
+            self.menuImage.layer.borderWidth = 4
+            self.menuImage.layer.masksToBounds = false
+            self.menuImage.layer.borderColor = UIColor.clear.cgColor
+            self.menuImage.layer.cornerRadius = menuImage.frame.height/2
+            self.menuImage.clipsToBounds = true
             self.menuImage.file = menuItem.photo
             self.menuImage.loadInBackground()
         }

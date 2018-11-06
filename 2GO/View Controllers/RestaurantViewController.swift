@@ -10,10 +10,9 @@ import UIKit
 import ParseUI
 
 class RestaurantViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var lineImage: UIImageView!
+
     @IBOutlet weak var menuSelection: UILabel!
     @IBOutlet weak var resRatings: UIImageView!
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var resName: UILabel!
     @IBOutlet weak var resNumber: UILabel!
@@ -23,11 +22,6 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     var restaurant: Restaurant!
     
     var imageView = PFImageView()
-    
-    let tableHeaderHeight: CGFloat = 10.0  // CHALLENGE: make this 4/5 of the screen height
-    let tableHeaderCutAway: CGFloat = 40.0
-    
-    var headerMaskLayer: CAShapeLayer!
     
     var resMenuItems: [MenuItem] = [] {
         didSet {
@@ -48,9 +42,9 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
             cart.append(objectId)
             defaults.set(cart, forKey: "cart")
             defaults.synchronize()
-            alertControl("Dish Added!")
+            alertControl("Menu Item Added")
         } else {
-            alertControl("Already in Cart")
+            alertControl("Item Existed in Cart")
         }
     
     }
