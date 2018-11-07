@@ -8,15 +8,13 @@
 
 import UIKit
 
-class ConfirmPayViewController: UIViewController {
+class PaymentSuccessViewController: UIViewController {
 
-    @IBOutlet weak var confirmLabel: UILabel!
     @IBOutlet weak var paymentLabel: UILabel!
-    @IBOutlet weak var okButton: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        okButton.layer.cornerRadius = 8
         // Do any additional setup after loading the view.
     }
 
@@ -26,7 +24,7 @@ class ConfirmPayViewController: UIViewController {
     }
     
     @IBAction func didTapOK(_ sender: UIButton) {
-       self.performSegue(withIdentifier: "home", sender: nil)
+       self.performSegue(withIdentifier: "pickup", sender: nil)
     }
     
     

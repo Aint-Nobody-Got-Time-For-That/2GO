@@ -25,6 +25,7 @@ class CartTableViewCell: UITableViewCell {
             self.menuImage.layer.borderColor = UIColor.clear.cgColor
             self.menuImage.layer.cornerRadius = menuImage.frame.height/2
             self.menuImage.clipsToBounds = true
+            self.menuImage.contentMode = .scaleAspectFill
             self.menuImage.file = menuItem.photo
             self.menuImage.loadInBackground()
         }

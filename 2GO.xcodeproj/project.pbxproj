@@ -17,8 +17,10 @@
 		3439DFBA2181B31B007A67BC /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFB92181B31B007A67BC /* CartTableViewCell.swift */; };
 		3439DFBC21825A10007A67BC /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFBB21825A10007A67BC /* Cart.swift */; };
 		34658C6C2192234E00345C3A /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C6B2192234E00345C3A /* OrderViewController.swift */; };
-		34658C70219280AE00345C3A /* ConfirmPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C6F219280AE00345C3A /* ConfirmPayViewController.swift */; };
-		34658C722192873A00345C3A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C712192873A00345C3A /* LoginViewController.swift */; };
+		34658C70219280AE00345C3A /* PaymentSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C6F219280AE00345C3A /* PaymentSuccessViewController.swift */; };
+		34658C722192873A00345C3A /* PickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C712192873A00345C3A /* PickUpViewController.swift */; };
+		34658C742192BFBE00345C3A /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C732192BFBD00345C3A /* ConfirmViewController.swift */; };
+		34658C762192C21400345C3A /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C752192C21400345C3A /* ThankYouViewController.swift */; };
 		34BF3649216C482D00F474E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF3648216C482D00F474E1 /* AppDelegate.swift */; };
 		34BF364E216C482D00F474E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BF364C216C482D00F474E1 /* Main.storyboard */; };
 		34BF3653216C482E00F474E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BF3651216C482E00F474E1 /* LaunchScreen.storyboard */; };
@@ -64,8 +66,10 @@
 		3439DFB92181B31B007A67BC /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		3439DFBB21825A10007A67BC /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		34658C6B2192234E00345C3A /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
-		34658C6F219280AE00345C3A /* ConfirmPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPayViewController.swift; sourceTree = "<group>"; };
-		34658C712192873A00345C3A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		34658C6F219280AE00345C3A /* PaymentSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessViewController.swift; sourceTree = "<group>"; };
+		34658C712192873A00345C3A /* PickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpViewController.swift; sourceTree = "<group>"; };
+		34658C732192BFBD00345C3A /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
+		34658C752192C21400345C3A /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
 		34BF3645216C482D00F474E1 /* 2GO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2GO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BF3648216C482D00F474E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BF364D216C482D00F474E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -207,8 +211,10 @@
 				34253F652178218C00C2317A /* MenuViewController.swift */,
 				3439DFB721818124007A67BC /* CartViewController.swift */,
 				34658C6B2192234E00345C3A /* OrderViewController.swift */,
-				34658C6F219280AE00345C3A /* ConfirmPayViewController.swift */,
-				34658C712192873A00345C3A /* LoginViewController.swift */,
+				34658C6F219280AE00345C3A /* PaymentSuccessViewController.swift */,
+				34658C712192873A00345C3A /* PickUpViewController.swift */,
+				34658C732192BFBD00345C3A /* ConfirmViewController.swift */,
+				34658C752192C21400345C3A /* ThankYouViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -460,20 +466,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34658C70219280AE00345C3A /* ConfirmPayViewController.swift in Sources */,
+				34658C70219280AE00345C3A /* PaymentSuccessViewController.swift in Sources */,
 				57726ABE21702D8D006E8CDA /* Restaurant.swift in Sources */,
 				57726AC021702E48006E8CDA /* MenuItem.swift in Sources */,
 				34253F64217820F500C2317A /* RestaurantViewController.swift in Sources */,
 				3439DFBC21825A10007A67BC /* Cart.swift in Sources */,
 				3439DFBA2181B31B007A67BC /* CartTableViewCell.swift in Sources */,
 				34BF3649216C482D00F474E1 /* AppDelegate.swift in Sources */,
+				34658C762192C21400345C3A /* ThankYouViewController.swift in Sources */,
 				578F5F36216EE993003EE2BE /* KeysSample.swift in Sources */,
 				57726AC221702FD3006E8CDA /* FakeData.swift in Sources */,
+				34658C742192BFBE00345C3A /* ConfirmViewController.swift in Sources */,
 				34253F62217820DE00C2317A /* HomeViewController.swift in Sources */,
 				3439DFB821818124007A67BC /* CartViewController.swift in Sources */,
 				34253F662178218C00C2317A /* MenuViewController.swift in Sources */,
 				34658C6C2192234E00345C3A /* OrderViewController.swift in Sources */,
-				34658C722192873A00345C3A /* LoginViewController.swift in Sources */,
+				34658C722192873A00345C3A /* PickUpViewController.swift in Sources */,
 				57E43702218A4FFF0088A8A5 /* Keys.swift in Sources */,
 				34253F6D2179BE9400C2317A /* PosterCollectionViewCell.swift in Sources */,
 				34253F75217AA64B00C2317A /* MenuTableViewCell.swift in Sources */,

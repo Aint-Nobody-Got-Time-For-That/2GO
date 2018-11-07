@@ -37,7 +37,7 @@ class OrderViewController: UIViewController {
     
     
     @IBAction func didTapCheckout(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "login", sender: nil)
+        self.performSegue(withIdentifier: "checkout", sender: nil)
     }
     
     

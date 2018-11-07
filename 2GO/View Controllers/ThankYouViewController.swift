@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  ThankYouViewController.swift
 //  2GO
 //
 //  Created by Pat Khai on 11/6/18.
@@ -8,13 +8,16 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class ThankYouViewController: UIViewController {
 
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var userName: UITextField!
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var createAccount: UIButton!
-    @IBOutlet weak var signIn: UIButton!
+    @IBOutlet weak var thankyouLabel: UILabel!
+    @IBOutlet weak var orderReadyLabel: UILabel!
+    
+    
+    
+    @IBAction func didTapOK(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "home", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,13 +29,7 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didSignIn(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "payment", sender: nil)
-    }
-    
-    @IBAction func didCreateAccount(_ sender: UIButton) {
-    }
-    
+
     /*
     // MARK: - Navigation
 
