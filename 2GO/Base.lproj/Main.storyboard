@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gEf-ji-0sp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dIc-t8-AOg">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1020,6 +1020,93 @@
             </objects>
             <point key="canvasLocation" x="965.21739130434787" y="130.43478260869566"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="xhq-Jg-RZG">
+            <objects>
+                <viewController id="dIc-t8-AOg" customClass="WelcomeViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gX6-Lp-C4k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="akharis-ahmad-710110-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="ueI-J7-P7K">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="812" id="tBC-7o-vw7"/>
+                                    <constraint firstAttribute="width" constant="375" id="x0f-p9-Vlw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🆃🆆🅾🅶🅾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU0-c1-DKR">
+                                <rect key="frame" x="87" y="99" width="215" height="43"/>
+                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="43"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't Wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J03-tD-A7N">
+                                <rect key="frame" x="124" y="217" width="140" height="37"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="id9-Ph-cyd">
+                                <rect key="frame" x="159" y="599" width="70" height="73"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="89b-b7-uHY"/>
+                                    <constraint firstAttribute="width" constant="70" id="eCd-VO-O1C"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="player-circle-512">
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapStart:" destination="dIc-t8-AOg" eventType="touchUpInside" id="bRR-sa-Nrc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Food" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-rI-ith">
+                                <rect key="frame" x="165" y="680" width="59" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="98" id="Ehg-Nf-7rb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dU0-c1-DKR" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="87" id="ELT-A6-aPf"/>
+                            <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="J03-tD-A7N" secondAttribute="trailing" constant="111" id="Isi-ZY-VVj"/>
+                            <constraint firstItem="0cf-rI-ith" firstAttribute="top" secondItem="id9-Ph-cyd" secondAttribute="bottom" constant="8" id="KEK-oq-IFk"/>
+                            <constraint firstItem="id9-Ph-cyd" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="159" id="Lk0-pe-jxb"/>
+                            <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="dU0-c1-DKR" secondAttribute="trailing" constant="73" id="OxE-Br-ORR"/>
+                            <constraint firstItem="0cf-rI-ith" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="165" id="aVu-Xy-iLP"/>
+                            <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="id9-Ph-cyd" secondAttribute="trailing" constant="146" id="eb4-s4-zux"/>
+                            <constraint firstItem="J03-tD-A7N" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="124" id="gdK-Oc-trT"/>
+                            <constraint firstItem="0cf-rI-ith" firstAttribute="bottom" secondItem="Y5B-v9-Hfz" secondAttribute="bottom" id="h5O-pu-DTZ"/>
+                            <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="0cf-rI-ith" secondAttribute="trailing" constant="151" id="iKZ-dc-wew"/>
+                            <constraint firstAttribute="bottom" secondItem="ueI-J7-P7K" secondAttribute="bottom" id="jnz-ea-ikz"/>
+                            <constraint firstItem="ueI-J7-P7K" firstAttribute="trailing" secondItem="Y5B-v9-Hfz" secondAttribute="trailing" id="oUv-8p-InG"/>
+                            <constraint firstItem="J03-tD-A7N" firstAttribute="top" secondItem="dU0-c1-DKR" secondAttribute="bottom" constant="75" id="oji-u0-vcA"/>
+                            <constraint firstItem="id9-Ph-cyd" firstAttribute="top" secondItem="J03-tD-A7N" secondAttribute="bottom" constant="345" id="rGF-6o-3PD"/>
+                            <constraint firstItem="ueI-J7-P7K" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" id="sD1-5F-RwP"/>
+                            <constraint firstItem="ueI-J7-P7K" firstAttribute="top" secondItem="gX6-Lp-C4k" secondAttribute="top" id="sWf-Pw-STb"/>
+                            <constraint firstItem="dU0-c1-DKR" firstAttribute="top" secondItem="Y5B-v9-Hfz" secondAttribute="top" constant="55" id="ygH-QZ-GFd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Y5B-v9-Hfz"/>
+                    </view>
+                    <connections>
+                        <outlet property="appLogoLabel" destination="dU0-c1-DKR" id="VSF-ej-ggJ"/>
+                        <outlet property="bgImage" destination="ueI-J7-P7K" id="hBo-JP-clL"/>
+                        <outlet property="dontLabel" destination="J03-tD-A7N" id="dGH-Ji-C9Q"/>
+                        <outlet property="foodLabel" destination="0cf-rI-ith" id="NkW-52-bWn"/>
+                        <outlet property="playButton" destination="id9-Ph-cyd" id="aXz-vN-IX9"/>
+                        <segue destination="gEf-ji-0sp" kind="show" identifier="start" id="zFc-tV-uTO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdm-96-1iU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-911.20000000000005" y="120.44334975369459"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Rql-Hw-YVT">
             <objects>
@@ -1065,14 +1152,17 @@
     <resources>
         <image name="Back Chevron" width="14" height="21"/>
         <image name="Home View" width="396" height="1"/>
+        <image name="akharis-ahmad-710110-unsplash" width="3456" height="5184"/>
         <image name="cart" width="24" height="20"/>
         <image name="home-icon" width="30" height="30"/>
         <image name="ic_close" width="499" height="499"/>
+        <image name="player-circle-512" width="512" height="512"/>
         <image name="rating" width="72" height="40"/>
         <image name="taco1" width="640" height="480"/>
         <image name="visa" width="500" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="zFc-tV-uTO"/>
         <segue reference="gXp-2c-oMS"/>
     </inferredMetricsTieBreakers>
 </document>

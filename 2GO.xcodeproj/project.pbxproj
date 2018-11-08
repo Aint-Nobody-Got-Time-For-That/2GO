@@ -21,6 +21,7 @@
 		34658C722192873A00345C3A /* PickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C712192873A00345C3A /* PickUpViewController.swift */; };
 		34658C742192BFBE00345C3A /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C732192BFBD00345C3A /* ConfirmViewController.swift */; };
 		34658C762192C21400345C3A /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C752192C21400345C3A /* ThankYouViewController.swift */; };
+		34658C7821944CA200345C3A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C7721944CA100345C3A /* WelcomeViewController.swift */; };
 		34BF3649216C482D00F474E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF3648216C482D00F474E1 /* AppDelegate.swift */; };
 		34BF364E216C482D00F474E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BF364C216C482D00F474E1 /* Main.storyboard */; };
 		34BF3653216C482E00F474E1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34BF3651216C482E00F474E1 /* LaunchScreen.storyboard */; };
@@ -70,6 +71,7 @@
 		34658C712192873A00345C3A /* PickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpViewController.swift; sourceTree = "<group>"; };
 		34658C732192BFBD00345C3A /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		34658C752192C21400345C3A /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
+		34658C7721944CA100345C3A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		34BF3645216C482D00F474E1 /* 2GO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2GO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BF3648216C482D00F474E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BF364D216C482D00F474E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		57726ABA21702BED006E8CDA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				34658C7721944CA100345C3A /* WelcomeViewController.swift */,
 				34253F61217820DE00C2317A /* HomeViewController.swift */,
 				34253F63217820F500C2317A /* RestaurantViewController.swift */,
 				34253F652178218C00C2317A /* MenuViewController.swift */,
@@ -467,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34658C70219280AE00345C3A /* PaymentSuccessViewController.swift in Sources */,
+				34658C7821944CA200345C3A /* WelcomeViewController.swift in Sources */,
 				57726ABE21702D8D006E8CDA /* Restaurant.swift in Sources */,
 				57726AC021702E48006E8CDA /* MenuItem.swift in Sources */,
 				34253F64217820F500C2317A /* RestaurantViewController.swift in Sources */,
