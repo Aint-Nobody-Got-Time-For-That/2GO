@@ -25,8 +25,8 @@
                                     <constraint firstAttribute="height" constant="812" id="t28-fT-o9u"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🆃🆆🅾🅶🅾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFp-pN-Do4">
-                                <rect key="frame" x="80" y="191" width="215" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2🅶🅾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFp-pN-Do4">
+                                <rect key="frame" x="132" y="192" width="110" height="43"/>
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -34,10 +34,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WFp-pN-Do4" secondAttribute="trailing" constant="80" id="0TJ-GB-xfs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WFp-pN-Do4" secondAttribute="trailing" constant="133" id="0TJ-GB-xfs"/>
                             <constraint firstItem="R5b-N1-VNi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1jw-Z6-uk1"/>
-                            <constraint firstItem="WFp-pN-Do4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="147" id="5CN-2I-hn9"/>
-                            <constraint firstItem="WFp-pN-Do4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="A0v-Vg-UDl"/>
+                            <constraint firstItem="WFp-pN-Do4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148" id="5CN-2I-hn9"/>
+                            <constraint firstItem="WFp-pN-Do4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="A0v-Vg-UDl"/>
                             <constraint firstAttribute="bottom" secondItem="R5b-N1-VNi" secondAttribute="bottom" id="R3D-Gg-b8Y"/>
                             <constraint firstItem="R5b-N1-VNi" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="XMl-UB-jp0"/>
                             <constraint firstItem="R5b-N1-VNi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tot-QT-S7p"/>

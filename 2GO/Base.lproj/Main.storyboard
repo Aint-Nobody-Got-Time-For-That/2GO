@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TwoGO-->
+        <!--TOGO-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="_GO" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,7 +133,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="TwoGO" id="2gY-ZB-qZX"/>
+                    <navigationItem key="navigationItem" title="TOGO" id="2gY-ZB-qZX"/>
                     <connections>
                         <outlet property="collectionView" destination="CHl-ao-tne" id="1wr-8F-VOz"/>
                         <outlet property="scrollView" destination="bZG-qg-eel" id="VV7-A0-CYy"/>
@@ -1059,15 +1059,9 @@
                                     <constraint firstAttribute="width" constant="375" id="x0f-p9-Vlw"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🆃🆆🅾🅶🅾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU0-c1-DKR">
-                                <rect key="frame" x="87" y="99" width="215" height="43"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2🅶🅾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dU0-c1-DKR">
+                                <rect key="frame" x="132" y="97" width="110" height="43"/>
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="43"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't Wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J03-tD-A7N">
-                                <rect key="frame" x="124" y="217" width="140" height="37"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -1086,35 +1080,41 @@
                                     <action selector="didTapStart:" destination="dIc-t8-AOg" eventType="touchUpInside" id="bRR-sa-Nrc"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Food" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-rI-ith">
-                                <rect key="frame" x="165" y="680" width="59" height="98"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Food" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0cf-rI-ith">
+                                <rect key="frame" x="161" y="688" width="67" height="71"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="98" id="Ehg-Nf-7rb"/>
+                                    <constraint firstAttribute="height" constant="71" id="Ehg-Nf-7rb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't Wait" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J03-tD-A7N">
+                                <rect key="frame" x="124" y="246" width="140" height="37"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="31"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dU0-c1-DKR" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="87" id="ELT-A6-aPf"/>
+                            <constraint firstItem="dU0-c1-DKR" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="132" id="ELT-A6-aPf"/>
                             <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="J03-tD-A7N" secondAttribute="trailing" constant="111" id="Isi-ZY-VVj"/>
-                            <constraint firstItem="0cf-rI-ith" firstAttribute="top" secondItem="id9-Ph-cyd" secondAttribute="bottom" constant="8" id="KEK-oq-IFk"/>
+                            <constraint firstItem="0cf-rI-ith" firstAttribute="top" secondItem="id9-Ph-cyd" secondAttribute="bottom" constant="16" id="KEK-oq-IFk"/>
                             <constraint firstItem="id9-Ph-cyd" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="159" id="Lk0-pe-jxb"/>
-                            <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="dU0-c1-DKR" secondAttribute="trailing" constant="73" id="OxE-Br-ORR"/>
-                            <constraint firstItem="0cf-rI-ith" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="165" id="aVu-Xy-iLP"/>
+                            <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="dU0-c1-DKR" secondAttribute="trailing" constant="133" id="OxE-Br-ORR"/>
+                            <constraint firstItem="0cf-rI-ith" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="161" id="aVu-Xy-iLP"/>
                             <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="id9-Ph-cyd" secondAttribute="trailing" constant="146" id="eb4-s4-zux"/>
                             <constraint firstItem="J03-tD-A7N" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" constant="124" id="gdK-Oc-trT"/>
-                            <constraint firstItem="0cf-rI-ith" firstAttribute="bottom" secondItem="Y5B-v9-Hfz" secondAttribute="bottom" id="h5O-pu-DTZ"/>
-                            <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="0cf-rI-ith" secondAttribute="trailing" constant="151" id="iKZ-dc-wew"/>
+                            <constraint firstItem="0cf-rI-ith" firstAttribute="bottom" secondItem="Y5B-v9-Hfz" secondAttribute="bottom" constant="-19" id="h5O-pu-DTZ"/>
+                            <constraint firstItem="Y5B-v9-Hfz" firstAttribute="trailing" secondItem="0cf-rI-ith" secondAttribute="trailing" constant="147" id="iKZ-dc-wew"/>
                             <constraint firstAttribute="bottom" secondItem="ueI-J7-P7K" secondAttribute="bottom" id="jnz-ea-ikz"/>
                             <constraint firstItem="ueI-J7-P7K" firstAttribute="trailing" secondItem="Y5B-v9-Hfz" secondAttribute="trailing" id="oUv-8p-InG"/>
-                            <constraint firstItem="J03-tD-A7N" firstAttribute="top" secondItem="dU0-c1-DKR" secondAttribute="bottom" constant="75" id="oji-u0-vcA"/>
-                            <constraint firstItem="id9-Ph-cyd" firstAttribute="top" secondItem="J03-tD-A7N" secondAttribute="bottom" constant="345" id="rGF-6o-3PD"/>
+                            <constraint firstItem="J03-tD-A7N" firstAttribute="top" secondItem="dU0-c1-DKR" secondAttribute="bottom" constant="106" id="oji-u0-vcA"/>
+                            <constraint firstItem="id9-Ph-cyd" firstAttribute="top" secondItem="J03-tD-A7N" secondAttribute="bottom" constant="316" id="rGF-6o-3PD"/>
                             <constraint firstItem="ueI-J7-P7K" firstAttribute="leading" secondItem="Y5B-v9-Hfz" secondAttribute="leading" id="sD1-5F-RwP"/>
                             <constraint firstItem="ueI-J7-P7K" firstAttribute="top" secondItem="gX6-Lp-C4k" secondAttribute="top" id="sWf-Pw-STb"/>
-                            <constraint firstItem="dU0-c1-DKR" firstAttribute="top" secondItem="Y5B-v9-Hfz" secondAttribute="top" constant="55" id="ygH-QZ-GFd"/>
+                            <constraint firstItem="dU0-c1-DKR" firstAttribute="top" secondItem="Y5B-v9-Hfz" secondAttribute="top" constant="53" id="ygH-QZ-GFd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Y5B-v9-Hfz"/>
                     </view>
