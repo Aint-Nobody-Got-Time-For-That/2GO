@@ -68,9 +68,9 @@ class MenuViewController: UIViewController {
             cart.append(objectId)
             defaults.set(cart, forKey: "cart")
             defaults.synchronize()
-            alertControl("Menu Item Added")
+            alertControl("Menu Item Added!")
         } else {
-            alertControl("Item Existed in Cart")
+            alertControl("Item Already Added to Cart!")
         }
         
     }
