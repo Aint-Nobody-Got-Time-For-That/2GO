@@ -18,6 +18,13 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var cartMenu: Cart!
     var delete = false
     
+    func getTotal() -> Double {
+        let totalString = self.cartTotal.text!
+        let decimals = Set("0123456789.")
+        let onlyNumber = String(totalString.filter{decimals.contains($0)})
+        return Double(onlyNumber)!
+    }
+    
     func cartTableViewCellDidTapAdd(_ sender: CartTableViewCell) {
         let currentAmountText = sender.itemAmountLabel.text!
         let amountString = "Amount: "
@@ -26,8 +33,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         currentAmount+=1
         sender.itemAmountLabel.text = amountString + String(currentAmount)
         let price = Double(sender.menuItem.price)!
-        let previousTotal = Double(self.cartTotal.text!.dropFirst())
-        let newTotal = previousTotal! + price
+        let previousTotal = getTotal()
+        let newTotal = previousTotal + price
         setTotal(val: newTotal)
     }
     
@@ -41,8 +48,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         } else {
             currentAmount-=1
             let price = Double(sender.menuItem.price)!
-            let previousTotal = Double(self.cartTotal.text!.dropFirst())
-            let newTotal = previousTotal! - price
+            let previousTotal = getTotal()
+            let newTotal = previousTotal - price
             setTotal(val: newTotal)
         }
         sender.itemAmountLabel.text = amountString + String(currentAmount)
@@ -105,8 +112,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let price = Double(priceText)!
         let amount = Double(amountText.dropFirst(amountString.count))!
         let subtotal = price * amount
-        let previousTotal = Double(cartTotal.text!.dropFirst())
-        let newTotal = subtotal + previousTotal!
+        let previousTotal = getTotal()
+        let newTotal = subtotal + previousTotal
         setTotal(val: newTotal)
         
         
@@ -138,8 +145,9 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let price = Double(priceText)!
                 let amount = Double(amountText.dropFirst(amountString.count))!
                 let subtotal = price * amount
-                let previousTotal = Double(self.cartTotal.text!.dropFirst())
-                let newTotal =  previousTotal! - subtotal
+                let previousTotal = self.getTotal()
+                let newTotal =  previousTotal - subtotal
+                cell.itemAmountLabel.text = "Amount: 1" //reset amount label
                 self.setTotal(val: newTotal)
 
                 self.delete = true
