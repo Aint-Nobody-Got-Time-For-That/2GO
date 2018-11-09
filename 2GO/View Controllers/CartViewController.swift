@@ -106,6 +106,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = self.tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
         cell.menuItem = resMenuItems[indexPath.row]
         cell.delegate = self
+        cell.selectionStyle = .none
         let priceText = cell.menuItem.price
         let amountText = cell.itemAmountLabel.text!
         let amountString = "Amount: "
