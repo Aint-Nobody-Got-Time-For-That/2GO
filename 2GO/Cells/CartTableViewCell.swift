@@ -9,6 +9,11 @@
 import UIKit
 import ParseUI
 
+protocol CartTableViewCellDelegate: class {
+    func cartTableViewCellDidTapAdd(_ sender: CartTableViewCell)
+    func cartTableViewCellDidTapMinus(_ sender: CartTableViewCell)
+}
+
 class CartTableViewCell: UITableViewCell {
     
     
@@ -17,27 +22,15 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var menuImage: PFImageView!
     @IBOutlet weak var itemAmountLabel: UILabel!
     
+    weak var delegate: CartTableViewCellDelegate?
+    
     @IBAction func onAdd(_ sender: UIButton) {
         sender.flash()
-        let currentAmountText = self.itemAmountLabel.text!
-        let amountString = "Amount: "
-        let removedAmountString = currentAmountText.dropFirst(amountString.count)
-        var currentAmount = Int(removedAmountString) ?? 1
-        currentAmount+=1
-        self.itemAmountLabel.text = amountString + String(currentAmount)
+        delegate?.cartTableViewCellDidTapAdd(self)
     }
     @IBAction func onRemove(_ sender: UIButton) {
         sender.flash()
-        let currentAmountText = self.itemAmountLabel.text!
-        let amountString = "Amount: "
-        let removedAmountString = currentAmountText.dropFirst(amountString.count)
-        var currentAmount = Int(removedAmountString) ?? 1
-        if( currentAmount <= 1) {
-            currentAmount = 1
-        } else {
-            currentAmount-=1
-        }
-        self.itemAmountLabel.text = amountString + String(currentAmount)
+        delegate?.cartTableViewCellDidTapMinus(self)
     }
     
     var menuItem: MenuItem! {

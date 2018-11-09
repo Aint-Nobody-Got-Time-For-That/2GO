@@ -43,9 +43,9 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
             cart.append(objectId)
             defaults.set(cart, forKey: "cart")
             defaults.synchronize()
-            alertControl("Menu Item Added!")
+            alertControl("Dish Added!")
         } else {
-            alertControl("Item Already in Cart.")
+            alertControl("Dish Already in Cart")
         }
     
     }
