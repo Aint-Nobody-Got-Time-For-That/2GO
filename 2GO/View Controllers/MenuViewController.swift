@@ -59,7 +59,6 @@ class MenuViewController: UIViewController {
     }
 
     @IBAction func addtoCart(_ sender: UIButton) {
-        
         let objectId = menu.objectId!
         let defaults = UserDefaults.standard
         
@@ -70,7 +69,7 @@ class MenuViewController: UIViewController {
             defaults.synchronize()
             alertControl("Menu Item Added!")
         } else {
-            alertControl("Item Already Added to Cart!")
+            alertControl("Item Already in Cart.")
         }
         
     }

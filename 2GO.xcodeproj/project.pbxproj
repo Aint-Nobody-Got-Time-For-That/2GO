@@ -35,6 +35,7 @@
 		67D6ADF6D1566F4DCE2EAC2F /* Pods_2GOTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FD50AE81C7BF87A8B22B78 /* Pods_2GOTests.framework */; };
 		7D476B4C7AB3851B17B377E1 /* Pods_2GO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB90632A995F18EFCD251A0A /* Pods_2GO.framework */; };
 		D8BAAD0A7B1847837AFB9EB4 /* Pods_2GOUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8675AE9FFD5C0ECCADBD7AA /* Pods_2GOUITests.framework */; };
+		E1B9BBA621954CDB00FF2605 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B9BBA521954CDB00FF2605 /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		AAF6A3E9E5C78604CD53CA12 /* Pods-2GOTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GOTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2GOTests/Pods-2GOTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C6B36CE3FFCE43947171C29E /* Pods-2GOUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GOUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-2GOUITests/Pods-2GOUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C8519AD210243FBA8AEA2185 /* Pods-2GO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GO.release.xcconfig"; path = "Pods/Target Support Files/Pods-2GO/Pods-2GO.release.xcconfig"; sourceTree = "<group>"; };
+		E1B9BBA521954CDB00FF2605 /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		EDD15AA0C38760569AC0DEB4 /* Pods-2GOTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-2GOTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-2GOTests/Pods-2GOTests.release.xcconfig"; sourceTree = "<group>"; };
 		FB90632A995F18EFCD251A0A /* Pods_2GO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_2GO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 				578F5F35216EE993003EE2BE /* KeysSample.swift */,
 				57E43701218A4FFF0088A8A5 /* Keys.swift */,
 				34027D742187F27D0022A5FB /* Assets.xcassets */,
+				E1B9BBA521954CDB00FF2605 /* UIButtonExtension.swift */,
 			);
 			path = 2GO;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				34658C762192C21400345C3A /* ThankYouViewController.swift in Sources */,
 				578F5F36216EE993003EE2BE /* KeysSample.swift in Sources */,
 				57726AC221702FD3006E8CDA /* FakeData.swift in Sources */,
+				E1B9BBA621954CDB00FF2605 /* UIButtonExtension.swift in Sources */,
 				34658C742192BFBE00345C3A /* ConfirmViewController.swift in Sources */,
 				34253F62217820DE00C2317A /* HomeViewController.swift in Sources */,
 				3439DFB821818124007A67BC /* CartViewController.swift in Sources */,

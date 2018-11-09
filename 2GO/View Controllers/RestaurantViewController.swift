@@ -30,6 +30,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     @IBAction func addtoCart(_ sender: UIButton) {
+        sender.flash()
         guard let cell = sender.superview?.superview as? MenuTableViewCell else {
             return
         }
@@ -44,7 +45,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
             defaults.synchronize()
             alertControl("Menu Item Added!")
         } else {
-            alertControl("Item Already Added to Cart!")
+            alertControl("Item Already in Cart.")
         }
     
     }

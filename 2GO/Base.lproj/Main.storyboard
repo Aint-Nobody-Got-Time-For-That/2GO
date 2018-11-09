@@ -862,9 +862,33 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7z-H9-Wl0">
+                                                    <rect key="frame" x="306" y="6" width="54" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="icons8-add-64"/>
+                                                    <connections>
+                                                        <action selector="onAdd:" destination="4TY-Tr-N4T" eventType="touchUpInside" id="HTx-dn-wTP"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiE-Cg-MJW">
+                                                    <rect key="frame" x="306" y="59" width="54" height="54"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="icons8-minus-64"/>
+                                                    <connections>
+                                                        <action selector="onRemove:" destination="4TY-Tr-N4T" eventType="touchUpInside" id="aFm-RG-9hE"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Amount: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0l-br-XH4">
+                                                    <rect key="frame" x="143" y="64" width="100" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="itemAmountLabel" destination="V0l-br-XH4" id="cMJ-Xr-2jQ"/>
                                             <outlet property="menuCost" destination="SmI-gg-Onu" id="uHV-dg-yEt"/>
                                             <outlet property="menuImage" destination="0Y5-CQ-baK" id="RmW-I1-QDF"/>
                                             <outlet property="menuName" destination="HNO-R1-pxu" id="RJo-zP-ZPS"/>
@@ -904,9 +928,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Cart" id="IoZ-S0-aBw"/>
                     <connections>
+                        <outlet property="cartTotal" destination="PxF-5K-CRz" id="exk-nM-ovD"/>
                         <outlet property="orderButton" destination="hlB-0H-3WS" id="wha-FA-AQq"/>
                         <outlet property="tableView" destination="nNp-70-pgi" id="obj-v3-V6W"/>
-                        <outlet property="totalItemCount" destination="PxF-5K-CRz" id="exk-nM-ovD"/>
                         <outlet property="totalLabel" destination="Jv1-L7-Imn" id="I5h-Ob-AV3"/>
                         <segue destination="bhB-P9-k1s" kind="show" identifier="order" id="p1z-zT-UeB"/>
                     </connections>
@@ -1001,7 +1025,6 @@
         <!--Home-->
         <scene sceneID="7tc-0b-eyi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="b98-nO-Rw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q9X-f3-mrt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="home-icon" id="jAv-UO-DrJ"/>
                     <toolbarItems/>
@@ -1017,6 +1040,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="v7A-lz-lBq"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b98-nO-Rw8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="965.21739130434787" y="130.43478260869566"/>
         </scene>
@@ -1110,7 +1134,6 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Rql-Hw-YVT">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="V7M-lA-1Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gEf-ji-0sp" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wE0-oy-jRd">
@@ -1125,6 +1148,7 @@
                         <segue destination="n7o-aS-bge" kind="relationship" relationship="viewControllers" id="gcj-wl-1gp"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V7M-lA-1Tb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="57.971014492753625" y="130.43478260869566"/>
         </scene>
@@ -1156,6 +1180,8 @@
         <image name="cart" width="24" height="20"/>
         <image name="home-icon" width="30" height="30"/>
         <image name="ic_close" width="499" height="499"/>
+        <image name="icons8-add-64" width="64" height="64"/>
+        <image name="icons8-minus-64" width="64" height="64"/>
         <image name="player-circle-512" width="512" height="512"/>
         <image name="rating" width="72" height="40"/>
         <image name="taco1" width="640" height="480"/>

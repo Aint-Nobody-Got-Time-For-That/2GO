@@ -15,6 +15,30 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var menuName: UILabel!
     @IBOutlet weak var menuCost: UILabel!
     @IBOutlet weak var menuImage: PFImageView!
+    @IBOutlet weak var itemAmountLabel: UILabel!
+    
+    @IBAction func onAdd(_ sender: UIButton) {
+        sender.flash()
+        let currentAmountText = self.itemAmountLabel.text!
+        let amountString = "Amount: "
+        let removedAmountString = currentAmountText.dropFirst(amountString.count)
+        var currentAmount = Int(removedAmountString) ?? 1
+        currentAmount+=1
+        self.itemAmountLabel.text = amountString + String(currentAmount)
+    }
+    @IBAction func onRemove(_ sender: UIButton) {
+        sender.flash()
+        let currentAmountText = self.itemAmountLabel.text!
+        let amountString = "Amount: "
+        let removedAmountString = currentAmountText.dropFirst(amountString.count)
+        var currentAmount = Int(removedAmountString) ?? 1
+        if( currentAmount <= 1) {
+            currentAmount = 1
+        } else {
+            currentAmount-=1
+        }
+        self.itemAmountLabel.text = amountString + String(currentAmount)
+    }
     
     var menuItem: MenuItem! {
         didSet {

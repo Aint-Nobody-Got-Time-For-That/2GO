@@ -13,9 +13,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var orderButton: UIButton!
-    @IBOutlet weak var totalItemCount: UILabel!  //USE THIS FOR THE COUNT OF ITEMS IN CART
+    @IBOutlet weak var cartTotal: UILabel!  //USE THIS FOR THE COUNT OF ITEMS IN CART
     @IBOutlet weak var totalLabel: UILabel!
-    
     
     
     var cartMenu: Cart!
