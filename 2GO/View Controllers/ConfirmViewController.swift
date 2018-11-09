@@ -24,7 +24,7 @@ class ConfirmViewController: UIViewController {
     }
     
     @IBAction func didTapConfirm(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "thankyou", sender: nil)
+        self.performSegue(withIdentifier: "checkout", sender: nil)
     }
     
     @IBAction func didTapEdit(_ sender: UIButton) {

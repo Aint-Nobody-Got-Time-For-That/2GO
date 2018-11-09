@@ -17,7 +17,6 @@
 		3439DFBA2181B31B007A67BC /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFB92181B31B007A67BC /* CartTableViewCell.swift */; };
 		3439DFBC21825A10007A67BC /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3439DFBB21825A10007A67BC /* Cart.swift */; };
 		34658C6C2192234E00345C3A /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C6B2192234E00345C3A /* OrderViewController.swift */; };
-		34658C70219280AE00345C3A /* PaymentSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C6F219280AE00345C3A /* PaymentSuccessViewController.swift */; };
 		34658C722192873A00345C3A /* PickUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C712192873A00345C3A /* PickUpViewController.swift */; };
 		34658C742192BFBE00345C3A /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C732192BFBD00345C3A /* ConfirmViewController.swift */; };
 		34658C762192C21400345C3A /* ThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34658C752192C21400345C3A /* ThankYouViewController.swift */; };
@@ -68,7 +67,6 @@
 		3439DFB92181B31B007A67BC /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 		3439DFBB21825A10007A67BC /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		34658C6B2192234E00345C3A /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
-		34658C6F219280AE00345C3A /* PaymentSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessViewController.swift; sourceTree = "<group>"; };
 		34658C712192873A00345C3A /* PickUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickUpViewController.swift; sourceTree = "<group>"; };
 		34658C732192BFBD00345C3A /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		34658C752192C21400345C3A /* ThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThankYouViewController.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 				34253F652178218C00C2317A /* MenuViewController.swift */,
 				3439DFB721818124007A67BC /* CartViewController.swift */,
 				34658C6B2192234E00345C3A /* OrderViewController.swift */,
-				34658C6F219280AE00345C3A /* PaymentSuccessViewController.swift */,
 				34658C712192873A00345C3A /* PickUpViewController.swift */,
 				34658C732192BFBD00345C3A /* ConfirmViewController.swift */,
 				34658C752192C21400345C3A /* ThankYouViewController.swift */,
@@ -472,7 +469,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34658C70219280AE00345C3A /* PaymentSuccessViewController.swift in Sources */,
 				34658C7821944CA200345C3A /* WelcomeViewController.swift in Sources */,
 				57726ABE21702D8D006E8CDA /* Restaurant.swift in Sources */,
 				57726AC021702E48006E8CDA /* MenuItem.swift in Sources */,
