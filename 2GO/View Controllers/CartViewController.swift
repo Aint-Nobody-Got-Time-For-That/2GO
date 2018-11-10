@@ -15,7 +15,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var cartTotal: UILabel!  //USE THIS FOR THE COUNT OF ITEMS IN CART
     @IBOutlet weak var totalLabel: UILabel!
     
-    var cartMenu: Cart!
     var delete = false
     
     func getTotal() -> Double {
@@ -186,14 +185,34 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.performSegue(withIdentifier: "order", sender: nil)
     }
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        
+        var cart: [OrderItem] = []
+        let restaurantId = "testRestaurantID" // get restaurant id from user defaults
+        
+        for (index, menuItem) in resMenuItems.enumerated() {
+            let indexPath = IndexPath(row: index, section: 0)
+            let cell = tableView.cellForRow(at: indexPath) as! CartTableViewCell
+            
+            let a = cell.itemAmountLabel.text!
+            let stringIndex = a.firstIndex(of: " ")!
+            let substring = a.suffix(from: stringIndex)
+            
+            let amount = Int(String(substring).trimmingCharacters(in: .whitespaces))
+
+            let newOrderItem = OrderItem()
+            newOrderItem.quantity = amount!
+            newOrderItem.addUniqueObject(menuItem, forKey: "menuItem")
+
+            cart.append(newOrderItem)
+        }
+
+        let pickupViewController = segue.destination as! PickUpViewController
+        pickupViewController.restaurantId = restaurantId
+        pickupViewController.cart = cart
+        
      }
-     */
-    
 }

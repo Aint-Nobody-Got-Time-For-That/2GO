@@ -12,19 +12,24 @@ class ConfirmViewController: UIViewController {
     
     @IBOutlet weak var pickupLabel: UILabel!
     @IBOutlet weak var detailView: UIView!
+    
+    var restaurantId: String!
+    var cart: [OrderItem]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func didTapConfirm(_ sender: UIButton) {
         self.performSegue(withIdentifier: "checkout", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let orderViewController = segue.destination as! OrderViewController
+        orderViewController.phoneNumber = "925-812-7778"
+        orderViewController.buyerName = "John Wayne"
+        orderViewController.restaurantId = restaurantId
+        orderViewController.cart = cart
     }
     
     @IBAction func didTapEdit(_ sender: UIButton) {

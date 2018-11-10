@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class OrderViewController: UIViewController {
 
@@ -24,8 +25,6 @@ class OrderViewController: UIViewController {
     @IBOutlet weak var expireLabel: UILabel!
     @IBOutlet weak var securityCodeLabel: UILabel!
     
-    
-    
     @IBOutlet weak var cardNameText: UITextField!
     @IBOutlet weak var cardNumberText: UITextField!
     
@@ -34,13 +33,35 @@ class OrderViewController: UIViewController {
     
     @IBOutlet weak var checkoutButton: UIButton!
     
-    
+    var phoneNumber: String!
+    var buyerName: String!
+    var restaurantId: String!
+    var cart: [OrderItem]!
     
     @IBAction func didTapCheckout(_ sender: UIButton) {
-        self.performSegue(withIdentifier: "thankyou", sender: nil)
+        
+        let newOrder = Order()
+        newOrder.phoneNumber = phoneNumber
+        newOrder.buyerName = buyerName
+        newOrder.restaurantID = restaurantId
+        newOrder.addUniqueObject(cart, forKey: "order")
+        
+        // show PKHUD
+        PKHUD.sharedHUD.contentView = PKHUDProgressView()
+        PKHUD.sharedHUD.show()
+        
+        newOrder.saveInBackground { (success: Bool, error: Error?) in
+            if success {
+                PKHUD.sharedHUD.contentView = PKHUDSuccessView()
+                PKHUD.sharedHUD.hide(afterDelay: 0.3, completion: { (success) in
+                    self.performSegue(withIdentifier: "thankyou", sender: nil)
+                })
+            } else {
+                print("new order save in background error: \(error!)")
+            }
+        }
+        
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
