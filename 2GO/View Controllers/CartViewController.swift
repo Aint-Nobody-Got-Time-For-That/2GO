@@ -13,8 +13,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var orderButton: UIButton!
     @IBOutlet weak var cartTotal: UILabel!  //USE THIS FOR THE COUNT OF ITEMS IN CART
-    @IBOutlet weak var totalLabel: UILabel!
-    
+
     var cartMenu: Cart!
     var delete = false
     
@@ -27,7 +26,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func cartTableViewCellDidTapAdd(_ sender: CartTableViewCell) {
         let currentAmountText = sender.itemAmountLabel.text!
-        let amountString = "Amount: "
+        let amountString = ""
         let removedAmountString = currentAmountText.dropFirst(amountString.count)
         var currentAmount = Int(removedAmountString) ?? 1
         currentAmount+=1
@@ -40,7 +39,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func cartTableViewCellDidTapMinus(_ sender: CartTableViewCell) {
         let currentAmountText = sender.itemAmountLabel.text!
-        let amountString = "Amount: "
+        let amountString = ""
         let removedAmountString = currentAmountText.dropFirst(amountString.count)
         var currentAmount = Int(removedAmountString) ?? 1
         if( currentAmount <= 1) {
@@ -109,7 +108,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.selectionStyle = .none
         let priceText = cell.menuItem.price
         let amountText = cell.itemAmountLabel.text!
-        let amountString = "Amount: "
+        let amountString = ""
         let price = Double(priceText)!
         let amount = Double(amountText.dropFirst(amountString.count))!
         let subtotal = price * amount
@@ -142,13 +141,13 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let cell = tableView.cellForRow(at: indexPath) as! CartTableViewCell
                 let priceText = cell.menuItem.price
                 let amountText = cell.itemAmountLabel.text!
-                let amountString = "Amount: "
+                let amountString = ""
                 let price = Double(priceText)!
                 let amount = Double(amountText.dropFirst(amountString.count))!
                 let subtotal = price * amount
                 let previousTotal = self.getTotal()
                 let newTotal =  previousTotal - subtotal
-                cell.itemAmountLabel.text = "Amount: 1" //reset amount label
+                cell.itemAmountLabel.text = "1 " //reset amount label
                 self.setTotal(val: newTotal)
 
                 self.delete = true

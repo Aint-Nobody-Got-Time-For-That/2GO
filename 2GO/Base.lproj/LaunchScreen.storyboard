@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,18 +15,18 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bobby-rodriguezz-1043119-unsplash" translatesAutoresizingMaskIntoConstraints="NO" id="R5b-N1-VNi">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="820"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="854-JQ-PNO"/>
-                                    <constraint firstAttribute="height" constant="812" id="t28-fT-o9u"/>
+                                    <constraint firstAttribute="width" constant="414" id="Jm1-6a-R6W"/>
+                                    <constraint firstAttribute="height" constant="820" id="W0A-Dr-pRf"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2🅶🅾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFp-pN-Do4">
-                                <rect key="frame" x="132" y="192" width="110" height="43"/>
+                                <rect key="frame" x="152" y="119" width="110" height="43"/>
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -34,20 +34,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WFp-pN-Do4" secondAttribute="trailing" constant="133" id="0TJ-GB-xfs"/>
-                            <constraint firstItem="R5b-N1-VNi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="1jw-Z6-uk1"/>
-                            <constraint firstItem="WFp-pN-Do4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="148" id="5CN-2I-hn9"/>
-                            <constraint firstItem="WFp-pN-Do4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="A0v-Vg-UDl"/>
-                            <constraint firstAttribute="bottom" secondItem="R5b-N1-VNi" secondAttribute="bottom" id="R3D-Gg-b8Y"/>
-                            <constraint firstItem="R5b-N1-VNi" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="XMl-UB-jp0"/>
-                            <constraint firstItem="R5b-N1-VNi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tot-QT-S7p"/>
+                            <constraint firstItem="R5b-N1-VNi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4Bb-nv-mfc"/>
+                            <constraint firstItem="WFp-pN-Do4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="99" id="FCe-BJ-3PD"/>
+                            <constraint firstAttribute="bottom" secondItem="R5b-N1-VNi" secondAttribute="bottom" constant="-84" id="GgN-Xn-B9L"/>
+                            <constraint firstItem="R5b-N1-VNi" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="To0-9K-K03"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WFp-pN-Do4" secondAttribute="bottom" constant="574" id="cOI-rr-vAi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WFp-pN-Do4" secondAttribute="trailing" constant="152" id="hz3-S8-gny"/>
+                            <constraint firstItem="R5b-N1-VNi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uPp-g7-zKV"/>
+                            <constraint firstItem="WFp-pN-Do4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="vfK-GF-Mo3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52" y="374.6305418719212"/>
+            <point key="canvasLocation" x="50.724637681159422" y="374.18478260869568"/>
         </scene>
     </scenes>
     <resources>

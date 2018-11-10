@@ -71,10 +71,10 @@ class WelcomeViewController: UIViewController {
     
     
     func roundButton() {
-        playButton.layer.borderWidth = 4
+        playButton.layer.borderWidth = 2
         playButton.layer.masksToBounds = false
         playButton.layer.borderColor = UIColor.clear.cgColor
-        playButton.layer.cornerRadius = playButton.frame.height/2
+        playButton.layer.cornerRadius = playButton.frame.height/2 + 2.5
         playButton.clipsToBounds = true
         playButton.contentMode = .scaleAspectFill
     }

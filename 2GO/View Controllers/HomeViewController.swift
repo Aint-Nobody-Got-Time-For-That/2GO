@@ -40,7 +40,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         let cellsPerLine: CGFloat = 1
         let interItemSpacing = layout.minimumInteritemSpacing * (cellsPerLine - 1)
         let widthCell = collectionView.frame.width / cellsPerLine - interItemSpacing / cellsPerLine
-        layout.itemSize = CGSize(width: widthCell - 29, height: widthCell - 179)
+        layout.itemSize = CGSize(width: widthCell - 29, height: widthCell - 220)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -84,6 +84,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         searchBar.layer.shadowOpacity = 1.0
         searchBar.layer.shadowColor = UIColor.gray.cgColor
         searchBar.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        searchBar.placeholder = "Restaurants"
+        searchBar.layer.borderColor = UIColor.gray.cgColor
     }
     
     
@@ -112,7 +114,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     @objc func imageSwipper() {
-        imageArray = [#imageLiteral(resourceName: "avocado-toast") ,#imageLiteral(resourceName: "lexie-barnhorn-583894-unsplash") ,#imageLiteral(resourceName: "acai-bowl") , #imageLiteral(resourceName: "jelleke-vanooteghem-400034-unsplash"),#imageLiteral(resourceName: "taco5") ]
+        imageArray = [#imageLiteral(resourceName: "taco7") ,#imageLiteral(resourceName: "lexie-barnhorn-583894-unsplash") ,#imageLiteral(resourceName: "pexels-photo-1279330") , #imageLiteral(resourceName: "jelleke-vanooteghem-400034-unsplash"),#imageLiteral(resourceName: "markus-winkler-701497-unsplash") ]
         for i in 0..<imageArray.count {
             let imageView = UIImageView()
             imageView.image = imageArray[i]
@@ -143,6 +145,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         

@@ -122,7 +122,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         imageView.file = restaurant.photo
         imageView.loadInBackground()
         
-        tableView.contentInset = UIEdgeInsetsMake(220, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(226, 0, 0, 0)
         tableView.backgroundColor = UIColor.white
         
         imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 300)
@@ -132,7 +132,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = 376 - (scrollView.contentOffset.y + 300)
+        let y = 370 - (scrollView.contentOffset.y + 300)
         let height = min(max(y, 60), 400)
         imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: height)
     }

@@ -34,6 +34,8 @@ class PosterCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         self.resPhoto.layer.cornerRadius = 5
         self.resPhoto.clipsToBounds = true
+        self.gradientView.layer.cornerRadius = 5
+       
     }
     
     var restaurant: Restaurant! {
