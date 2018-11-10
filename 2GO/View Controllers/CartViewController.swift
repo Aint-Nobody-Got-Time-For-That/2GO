@@ -12,13 +12,12 @@ import Parse
 class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CartTableViewCellDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var orderButton: UIButton!
-    @IBOutlet weak var cartTotal: UILabel!  //USE THIS FOR THE COUNT OF ITEMS IN CART
 
     var cartMenu: Cart!
     var delete = false
     
     func getTotal() -> Double {
-        let totalString = self.cartTotal.text!
+        let totalString = self.orderButton.titleLabel!.text!
         let decimals = Set("0123456789.")
         let onlyNumber = String(totalString.filter{decimals.contains($0)})
         return Double(onlyNumber)!
@@ -61,7 +60,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         currencyFormatter.locale = Locale.current
         let nsNumberSum = NSNumber.init(value:val)
         let sumString = currencyFormatter.string(from: nsNumberSum)
-        cartTotal.text = sumString
+        // orderButton.setTitle("Order: $\(sumString)", for: .normal)
     }
     
     var resMenuItems: [MenuItem] = [] {
@@ -92,7 +91,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = 121
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 125
         // Do any additional setup after loading the view.
       
     }
