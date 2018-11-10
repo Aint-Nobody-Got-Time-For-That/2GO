@@ -13,10 +13,7 @@ class PickUpViewController: UIViewController {
     @IBOutlet weak var titlePickup: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
-    @IBOutlet weak var emailLabel: UILabel!
     
- 
-    @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var phoneNumberText: UITextField!
     
