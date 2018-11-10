@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +26,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2🅶🅾" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFp-pN-Do4">
-                                <rect key="frame" x="152" y="119" width="110" height="43"/>
+                                <rect key="frame" x="152" y="120.00000000000001" width="110" height="47.666666666666671"/>
                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -35,13 +35,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="R5b-N1-VNi" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4Bb-nv-mfc"/>
-                            <constraint firstItem="WFp-pN-Do4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="99" id="FCe-BJ-3PD"/>
+                            <constraint firstItem="WFp-pN-Do4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="FCe-BJ-3PD"/>
                             <constraint firstAttribute="bottom" secondItem="R5b-N1-VNi" secondAttribute="bottom" constant="-84" id="GgN-Xn-B9L"/>
+                            <constraint firstItem="WFp-pN-Do4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Huc-IA-CIv"/>
                             <constraint firstItem="R5b-N1-VNi" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="To0-9K-K03"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="WFp-pN-Do4" secondAttribute="bottom" constant="574" id="cOI-rr-vAi"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WFp-pN-Do4" secondAttribute="trailing" constant="152" id="hz3-S8-gny"/>
                             <constraint firstItem="R5b-N1-VNi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uPp-g7-zKV"/>
-                            <constraint firstItem="WFp-pN-Do4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="vfK-GF-Mo3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
