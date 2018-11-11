@@ -14,7 +14,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var orderButton: UIButton!
     
     var total = 0.0
-    var cartMenu: Cart!
     var delete = false
     
     func cartTableViewCellDidTapAdd(_ sender: CartTableViewCell) {
@@ -170,14 +169,32 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.performSegue(withIdentifier: "order", sender: nil)
     }
     
-    /*
      // MARK: - Navigation
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        
+        var cart: [OrderItem] = []
+        
+        // TODO: put restaurant here
+        let restaurantId = "testRestaurantID"
+        
+        for (index, menuItem) in resMenuItems.enumerated() {
+            let indexPath = IndexPath(row: index, section: 0)
+            let cell = tableView.cellForRow(at: indexPath) as! CartTableViewCell
+            
+            let amount = Int(cell.itemAmountLabel.text!)
+
+            let newOrderItem = OrderItem()
+            newOrderItem.quantity = amount!
+            newOrderItem.addUniqueObject(menuItem, forKey: "menuItem")
+
+            cart.append(newOrderItem)
+        }
+
+        let pickupViewController = segue.destination as! PickUpViewController
+        pickupViewController.restaurantId = restaurantId
+        pickupViewController.cart = cart
+        
      }
-     */
-    
 }
