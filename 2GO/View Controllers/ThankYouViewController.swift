@@ -14,8 +14,12 @@ class ThankYouViewController: UIViewController {
     @IBOutlet weak var orderReadyLabel: UILabel!
     
     
-    
     @IBAction func didTapOK(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        var cart = defaults.array(forKey:"cart") as! [String]
+        cart.removeAll()
+        defaults.set(cart, forKey: "cart")
+        defaults.synchronize()
         self.performSegue(withIdentifier: "home", sender: nil)
     }
     override func viewDidLoad() {
