@@ -37,8 +37,39 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         
         let objectId = cell.menuItem.objectId!
         let defaults = UserDefaults.standard
-        
         var cart = defaults.array(forKey:"cart") as! [String]
+        
+        if defaults.string(forKey: "currentRestaurant") == nil {
+            let currentId = restaurant.objectId
+            defaults.set(currentId, forKey: "currentRestaurant")
+        } else {
+            let currentRestaurant = defaults.string(forKey: "currentRestaurant")
+            if(currentRestaurant != restaurant.objectId) {
+                // Ask if user wants to clear cart to add item from another restaurant?
+                // if Yes, change restaurant to currentId
+                let messageTitle = "Clear your cart?"
+                let alertController = UIAlertController(title: messageTitle, message: "You can only order from one restaurant at a time", preferredStyle: .alert)
+                let OKAction = UIAlertAction(title: "Yes", style: .default) { (action) in
+                    let currentId = self.restaurant.objectId!
+                    defaults.set(currentId,forKey: "currentRestaurant")
+                    var cart = defaults.array(forKey:"cart") as! [String]
+                    cart.removeAll()
+                    cart.append(objectId)
+                    defaults.set(cart, forKey: "cart")
+                    defaults.synchronize()
+                }
+                let cancelAction = UIAlertAction(title: "No", style: .default) { (action) in
+                }
+                alertController.addAction(OKAction)
+                alertController.addAction(cancelAction)
+                
+                self.present(alertController, animated: true) {
+                    // optional code for what happens after the alert controller has finished presenting
+                }
+                return
+            }
+        }
+
         if !cart.contains(objectId) {
             cart.append(objectId)
             defaults.set(cart, forKey: "cart")
@@ -106,6 +137,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         
         let indexPath = tableView.indexPath(for: cell)!
         let viewController = segue.destination as! MenuViewController
+        viewController.restaurant = restaurant
         viewController.menu = resMenuItems[indexPath.row]
     }
     

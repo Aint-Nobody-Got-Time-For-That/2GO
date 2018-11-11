@@ -18,6 +18,7 @@ class ThankYouViewController: UIViewController {
         var cart = defaults.array(forKey:"cart") as! [String]
         cart.removeAll()
         defaults.set(cart, forKey: "cart")
+        defaults.removeObject(forKey: "currentRestaurant")
         defaults.synchronize()
         self.performSegue(withIdentifier: "home", sender: nil)
     }

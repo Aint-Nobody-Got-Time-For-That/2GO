@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
         let defaults = UserDefaults.standard
         defaults.set([], forKey: "cart")
+        
+        if(defaults.string(forKey: "currentRestaurant") != nil ){
+            defaults.removeObject(forKey: "currentRestaurant")
+        }
+        
         defaults.synchronize()
         
         Parse.initialize(
