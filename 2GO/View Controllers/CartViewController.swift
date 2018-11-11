@@ -129,9 +129,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 let price = Double(cell.menuItem.price)!
                 let amount = Double(cell.itemAmountLabel.text!)!
                 let subtotal = price * amount
-                let previousTotal = self.total
-                let newTotal =  previousTotal - subtotal
-                if(newTotal <= 0 ){
+                self.total =  self.total - subtotal
+                if(self.total <= 0 ){
                     self.total = 0.0
                 }
                 cell.itemAmountLabel.text = "1" //reset amount label
