@@ -17,6 +17,9 @@ class PickUpViewController: UIViewController {
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var phoneNumberText: UITextField!
     
+    var restaurantId: String!
+    var cart: [OrderItem]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,5 +34,10 @@ class PickUpViewController: UIViewController {
         self.performSegue(withIdentifier: "detail", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let confirmViewController = segue.destination as! ConfirmViewController
+        confirmViewController.restaurantId = restaurantId
+        confirmViewController.cart = cart
+    }
 
 }
