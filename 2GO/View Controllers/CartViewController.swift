@@ -16,6 +16,14 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var total = 0.0
     var delete = false
     
+    var resMenuItems: [MenuItem] = [] {
+        didSet {
+            if(!delete) {
+                tableView.reloadData()
+            }
+        }
+    }
+    
     func cartTableViewCellDidTapAdd(_ sender: CartTableViewCell) {
         var currentAmount = Int(sender.itemAmountLabel.text!)!
         currentAmount+=1
@@ -50,14 +58,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let nsNumberSum = NSNumber.init(value:total)
         let sumString = "Order: " + currencyFormatter.string(from: nsNumberSum)!
         orderButton.setTitle(sumString, for: .normal)
-    }
-    
-    var resMenuItems: [MenuItem] = [] {
-        didSet {
-            if(!delete) {
-                tableView.reloadData()
-            }
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -166,6 +166,11 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func didTapOrder(_ sender: UIButton) {
+        let defaults = UserDefaults.standard
+        
+        if( resMenuItems.count == 0 || defaults.string(forKey: "currentRestaurant") == nil) {
+            return
+        }
         self.performSegue(withIdentifier: "order", sender: nil)
     }
     
@@ -176,8 +181,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         var cart: [OrderItem] = []
         
-        // TODO: put restaurant here
-        let restaurantId = "testRestaurantID"
+        let defaults = UserDefaults.standard
+        let restaurantId = defaults.string(forKey: "currentRestaurant")
         
         for (index, menuItem) in resMenuItems.enumerated() {
             let indexPath = IndexPath(row: index, section: 0)
