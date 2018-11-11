@@ -122,7 +122,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         imageView.file = restaurant.photo
         imageView.loadInBackground()
         
-        tableView.contentInset = UIEdgeInsetsMake(226, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(229, 0, 0, 0)
         tableView.backgroundColor = UIColor.white
         
         imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 300)
