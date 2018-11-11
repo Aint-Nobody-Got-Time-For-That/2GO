@@ -12,55 +12,45 @@ import Parse
 class CartViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CartTableViewCellDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var orderButton: UIButton!
-
+    
+    var total = 0.0
     var cartMenu: Cart!
     var delete = false
     
-    func getTotal() -> Double {
-        let totalString = self.orderButton.titleLabel!.text!
-        let decimals = Set("0123456789.")
-        let onlyNumber = String(totalString.filter{decimals.contains($0)})
-        return Double(onlyNumber)!
-    }
-    
     func cartTableViewCellDidTapAdd(_ sender: CartTableViewCell) {
-        let currentAmountText = sender.itemAmountLabel.text!
-        let amountString = ""
-        let removedAmountString = currentAmountText.dropFirst(amountString.count)
-        var currentAmount = Int(removedAmountString) ?? 1
+        var currentAmount = Int(sender.itemAmountLabel.text!)!
         currentAmount+=1
-        sender.itemAmountLabel.text = amountString + String(currentAmount)
+        sender.itemAmountLabel.text = String(currentAmount)
         let price = Double(sender.menuItem.price)!
-        let previousTotal = getTotal()
+        let previousTotal = total
         let newTotal = previousTotal + price
-        setTotal(val: newTotal)
+        total = newTotal
+        setTotalText()
     }
     
     func cartTableViewCellDidTapMinus(_ sender: CartTableViewCell) {
-        let currentAmountText = sender.itemAmountLabel.text!
-        let amountString = ""
-        let removedAmountString = currentAmountText.dropFirst(amountString.count)
-        var currentAmount = Int(removedAmountString) ?? 1
+        var currentAmount = Int(sender.itemAmountLabel.text!)!
         if( currentAmount <= 1) {
             return
         } else {
             currentAmount-=1
             let price = Double(sender.menuItem.price)!
-            let previousTotal = getTotal()
+            let previousTotal = total
             let newTotal = previousTotal - price
-            setTotal(val: newTotal)
+            total = newTotal
+            setTotalText()
         }
-        sender.itemAmountLabel.text = amountString + String(currentAmount)
+        sender.itemAmountLabel.text = String(currentAmount)
     }
     
-    func setTotal(val: Double) {
+    func setTotalText() {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
         currencyFormatter.locale = Locale.current
-        let nsNumberSum = NSNumber.init(value:val)
-        let sumString = currencyFormatter.string(from: nsNumberSum)
-        // orderButton.setTitle("Order: $\(sumString)", for: .normal)
+        let nsNumberSum = NSNumber.init(value:total)
+        let sumString = "Order: " + currencyFormatter.string(from: nsNumberSum)!
+        orderButton.setTitle(sumString, for: .normal)
     }
     
     var resMenuItems: [MenuItem] = [] {
@@ -73,7 +63,8 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setTotal(val: 0.0)
+        total = 0.0
+        setTotalText()
         let defaults = UserDefaults.standard
         let cart = defaults.array(forKey: "cart") as! [String]
         let query:PFQuery =  PFQuery(className: "MenuItem")
@@ -106,17 +97,13 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.menuItem = resMenuItems[indexPath.row]
         cell.delegate = self
         cell.selectionStyle = .none
-        let priceText = cell.menuItem.price
-        let amountText = cell.itemAmountLabel.text!
-        let amountString = ""
-        let price = Double(priceText)!
-        let amount = Double(amountText.dropFirst(amountString.count))!
+        let price = Double(cell.menuItem.price)!
+        let amount = Double(cell.itemAmountLabel.text!)!
         let subtotal = price * amount
-        let previousTotal = getTotal()
+        let previousTotal = total
         let newTotal = subtotal + previousTotal
-        setTotal(val: newTotal)
-        
-        
+        total = newTotal
+        setTotalText()
         return cell
     }
     
@@ -139,17 +126,16 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let deleteMenu = UIAlertController(title: nil, message: "Are you sure you want to delete this dish?", preferredStyle: .actionSheet)
             let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default) { (action) in
                 let cell = tableView.cellForRow(at: indexPath) as! CartTableViewCell
-                let priceText = cell.menuItem.price
-                let amountText = cell.itemAmountLabel.text!
-                let amountString = ""
-                let price = Double(priceText)!
-                let amount = Double(amountText.dropFirst(amountString.count))!
+                let price = Double(cell.menuItem.price)!
+                let amount = Double(cell.itemAmountLabel.text!)!
                 let subtotal = price * amount
-                let previousTotal = self.getTotal()
+                let previousTotal = self.total
                 let newTotal =  previousTotal - subtotal
-                cell.itemAmountLabel.text = "1 " //reset amount label
-                self.setTotal(val: newTotal)
-
+                if(newTotal <= 0 ){
+                    self.total = 0.0
+                }
+                cell.itemAmountLabel.text = "1" //reset amount label
+                self.setTotalText()
                 self.delete = true
                 let defaults = UserDefaults.standard
                 self.resMenuItems.remove(at: indexPath.row)
