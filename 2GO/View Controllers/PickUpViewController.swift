@@ -40,12 +40,13 @@ extension Substring {
 }
 
 
-class PickUpViewController: UIViewController {
+class PickUpViewController: UIViewController{
 
     @IBOutlet weak var titlePickup: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
     
+    @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var phoneNumberText: UITextField!
     
@@ -58,6 +59,16 @@ class PickUpViewController: UIViewController {
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
         let result =  phoneTest.evaluate(with: value)
         return result
+    }
+    
+    func disableButton() {
+        doneButton.isEnabled = false
+        doneButton.alpha = 0.77
+    }
+    
+    func enableButton() {
+        doneButton.alpha = 1.0
+        doneButton.isEnabled = true
     }
     
     override func viewDidLoad() {
@@ -74,9 +85,14 @@ class PickUpViewController: UIViewController {
             phoneNumberText.text = defaults.string(forKey: "phoneNumber")
         }
         
+        if( phoneNumberText.text!.count == 0 || nameText.text!.count == 0 ) {
+           disableButton()
+        }
+        
         // Do any additional setup after loading the view.
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -103,13 +119,28 @@ class PickUpViewController: UIViewController {
             newPhoneText = String(newPhoneText) + "-" + String(lastChar)
             sender.text = String(newPhoneText)
         }
+        
+        if( phoneNumberText.text!.count > 0 && nameText.text!.count > 0 ) {
+            enableButton()
+        } else {
+            disableButton()
+        }
+    }
+    
+
+    @IBAction func onNameEdit(_ sender: UITextField) {
+        if( phoneNumberText.text!.count > 0 && nameText.text!.count > 0 ) {
+            enableButton()
+        } else {
+            disableButton()
+        }
     }
     
     @IBAction func didTapDone(_ sender: UIButton) {
         let phoneNumber = phoneNumberText.text!
         let name = nameText.text!
+        
         if( name == "" ||  phoneNumber == "") {
-            alertControl("Please fill in required fields")
             return
         }
         
