@@ -12,28 +12,34 @@ class ConfirmViewController: UIViewController {
     
     @IBOutlet weak var pickupLabel: UILabel!
     @IBOutlet weak var detailView: UIView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var phoneLabel: UILabel!
     
     var restaurantId: String!
+    var phoneNumber: String!
+    var name: String!
     var cart: [OrderItem]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = name
+        phoneLabel.text = phoneNumber
     }
     
     @IBAction func didTapConfirm(_ sender: UIButton) {
+        // Save on success
+        let defaults = UserDefaults.standard
+        defaults.set(phoneNumber, forKey:"phoneNumber")
+        defaults.set(name, forKey:"usersName")
+        defaults.synchronize()
         self.performSegue(withIdentifier: "checkout", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let orderViewController = segue.destination as! OrderViewController
-        orderViewController.phoneNumber = "925-812-7778"
-        orderViewController.buyerName = "John Wayne"
+        orderViewController.phoneNumber = phoneNumber
+        orderViewController.buyerName = name
         orderViewController.restaurantId = restaurantId
         orderViewController.cart = cart
     }
-    
-    @IBAction func didTapEdit(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 }
