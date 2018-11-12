@@ -66,6 +66,7 @@ class WelcomeViewController: UIViewController {
     }
     
     @IBAction func didTapStart(_ sender: UIButton) {
+        sender.pulsate()
         self.performSegue(withIdentifier: "start", sender: nil)
     }
     

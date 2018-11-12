@@ -77,6 +77,13 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         query.findObjectsInBackground { (objects: [PFObject]?, error: Error?) in
             if error == nil, let items = objects {
                 self.resMenuItems = items as! [MenuItem]
+                if( self.resMenuItems.count == 0 ) {
+                    self.orderButton.isEnabled = false
+                    self.orderButton.alpha = 0.77
+                } else {
+                    self.orderButton.isEnabled = true
+                    self.orderButton.alpha = 1.0
+                }
             } else {
                 print("Error in restaurant query: \(error!)")
             }
@@ -154,6 +161,11 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 defaults.synchronize()
                 self.delete = false
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
+                if( self.resMenuItems.count == 0 ) {
+                    self.orderButton.isEnabled = false
+                    self.orderButton.alpha = 0.77
+                }
+                
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil)
             
@@ -175,11 +187,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func didTapOrder(_ sender: UIButton) {
-        let defaults = UserDefaults.standard
-        
-        if( resMenuItems.count == 0 || defaults.string(forKey: "currentRestaurant") == nil) {
-            return
-        }
         self.performSegue(withIdentifier: "order", sender: nil)
     }
     
