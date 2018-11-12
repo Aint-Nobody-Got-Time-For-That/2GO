@@ -25,8 +25,11 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func cartTableViewCellDidTapAdd(_ sender: CartTableViewCell) {
-        var currentAmount = Int(sender.itemAmountLabel.text!)!
+        let defaults = UserDefaults.standard
+        var currentAmount = defaults.integer(forKey: sender.menuItem.objectId!)
         currentAmount+=1
+        defaults.set(currentAmount,forKey:sender.menuItem.objectId!)
+        defaults.synchronize()
         sender.itemAmountLabel.text = String(currentAmount)
         let price = Double(sender.menuItem.price)!
         let previousTotal = total
@@ -36,11 +39,14 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func cartTableViewCellDidTapMinus(_ sender: CartTableViewCell) {
-        var currentAmount = Int(sender.itemAmountLabel.text!)!
+        let defaults = UserDefaults.standard
+        var currentAmount = defaults.integer(forKey: sender.menuItem.objectId!)
         if( currentAmount <= 1) {
             return
         } else {
             currentAmount-=1
+            defaults.set(currentAmount, forKey: sender.menuItem.objectId!)
+            defaults.synchronize()
             let price = Double(sender.menuItem.price)!
             let previousTotal = total
             let newTotal = previousTotal - price
@@ -97,8 +103,10 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.delegate = self
         cell.selectionStyle = .none
         let price = Double(cell.menuItem.price)!
-        let amount = Double(cell.itemAmountLabel.text!)!
-        let subtotal = price * amount
+        let defaults = UserDefaults.standard
+        let amount = defaults.integer(forKey: cell.menuItem.objectId!)
+        cell.itemAmountLabel.text = String(amount)
+        let subtotal = price * Double(amount)
         let previousTotal = total
         let newTotal = subtotal + previousTotal
         total = newTotal
@@ -124,9 +132,10 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             let deleteMenu = UIAlertController(title: nil, message: "Are you sure you want to delete this dish?", preferredStyle: .actionSheet)
             let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default) { (action) in
+                let defaults = UserDefaults.standard
                 let cell = tableView.cellForRow(at: indexPath) as! CartTableViewCell
                 let price = Double(cell.menuItem.price)!
-                let amount = Double(cell.itemAmountLabel.text!)!
+                let amount = Double(defaults.integer(forKey: cell.menuItem.objectId!))
                 let subtotal = price * amount
                 self.total =  self.total - subtotal
                 if(self.total <= 0 ){
@@ -135,12 +144,12 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cell.itemAmountLabel.text = "1" //reset amount label
                 self.setTotalText()
                 self.delete = true
-                let defaults = UserDefaults.standard
                 self.resMenuItems.remove(at: indexPath.row)
                 var cart: [String] = []
                 for item in self.resMenuItems {
                     cart.append(item.objectId!)
                 }
+                defaults.removeObject(forKey: cell.menuItem.objectId!)
                 defaults.set(cart, forKey: "cart")
                 defaults.synchronize()
                 self.delete = false
@@ -187,11 +196,9 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         for (index, menuItem) in resMenuItems.enumerated() {
             let indexPath = IndexPath(row: index, section: 0)
             let cell = tableView.cellForRow(at: indexPath) as! CartTableViewCell
-            
-            let amount = Int(cell.itemAmountLabel.text!)
-
+            let amount = Int(defaults.integer(forKey: cell.menuItem.objectId!))
             let newOrderItem = OrderItem()
-            newOrderItem.quantity = amount!
+            newOrderItem.quantity = amount
             newOrderItem.addUniqueObject(menuItem, forKey: "menuItem")
 
             cart.append(newOrderItem)

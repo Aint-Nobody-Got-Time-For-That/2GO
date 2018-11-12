@@ -16,6 +16,9 @@ class ThankYouViewController: UIViewController {
     @IBAction func didTapOK(_ sender: UIButton) {
         let defaults = UserDefaults.standard
         var cart = defaults.array(forKey:"cart") as! [String]
+        for item in cart {
+            defaults.removeObject(forKey: item)
+        }
         cart.removeAll()
         defaults.set(cart, forKey: "cart")
         defaults.removeObject(forKey: "currentRestaurant")

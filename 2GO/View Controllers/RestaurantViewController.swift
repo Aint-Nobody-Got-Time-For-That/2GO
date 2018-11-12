@@ -73,10 +73,14 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         if !cart.contains(objectId) {
             cart.append(objectId)
             defaults.set(cart, forKey: "cart")
+            defaults.set(1,forKey: objectId)
             defaults.synchronize()
-            alertControl("Dish Added!")
+            //alertControl("Dish Added!")
         } else {
-            alertControl("Dish Already in Cart")
+            var amount = defaults.integer(forKey: objectId)
+            amount+=1
+            defaults.set(amount,forKey:objectId)
+            sender.flash()
         }
     
     }
