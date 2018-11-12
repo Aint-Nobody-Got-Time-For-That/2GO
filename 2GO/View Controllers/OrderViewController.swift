@@ -8,6 +8,7 @@
 
 import UIKit
 import PKHUD
+import Parse
 
 class OrderViewController: UIViewController {
 
@@ -44,20 +45,25 @@ class OrderViewController: UIViewController {
         newOrder.phoneNumber = phoneNumber
         newOrder.buyerName = buyerName
         newOrder.restaurantID = restaurantId
-        newOrder.addUniqueObject(cart, forKey: "order")
+        
+        // newOrder.addUniqueObject(cart, forKey: "order")
+        
+        for orderItem in cart {
+            orderItem.addUniqueObject(newOrder, forKey: "order")
+        }
         
         // show PKHUD
         PKHUD.sharedHUD.contentView = PKHUDProgressView()
         PKHUD.sharedHUD.show()
-        
-        newOrder.saveInBackground { (success: Bool, error: Error?) in
+
+        PFObject.saveAll(inBackground: cart) { (success: Bool, error: Error?) in
             if success {
                 PKHUD.sharedHUD.contentView = PKHUDSuccessView()
                 PKHUD.sharedHUD.hide(afterDelay: 0.3, completion: { (success) in
                     self.performSegue(withIdentifier: "thankyou", sender: nil)
                 })
             } else {
-                print("new order save in background error: \(error!)")
+                print("save all orderItems in cart in background error: \(error!)")
             }
         }
         
