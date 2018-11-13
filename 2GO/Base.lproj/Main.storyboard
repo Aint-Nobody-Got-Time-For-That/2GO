@@ -889,7 +889,7 @@
                             </tableView>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlB-0H-3WS">
                                 <rect key="frame" x="0.0" y="688" width="414" height="48"/>
-                                <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="0.57647058823529407" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="3ZI-LZ-04D"/>
                                     <constraint firstAttribute="height" constant="48" id="GfV-4f-qae"/>
@@ -1179,7 +1179,7 @@
         <image name="visa" width="500" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sMq-Ep-XW1"/>
+        <segue reference="QOh-uF-hF9"/>
         <segue reference="wXK-7u-QPs"/>
         <segue reference="gXp-2c-oMS"/>
     </inferredMetricsTieBreakers>
