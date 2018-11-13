@@ -420,12 +420,18 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name"/>
+                                <connections>
+                                    <action selector="onNameEdit:" destination="bhB-P9-k1s" eventType="editingChanged" id="je0-tf-p3T"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4245 454548 45454 " minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wQz-t9-hBE">
                                 <rect key="frame" x="20" y="442" width="380" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" textContentType="cc-number"/>
+                                <connections>
+                                    <action selector="onNameEdit:" destination="bhB-P9-k1s" eventType="editingChanged" id="BGE-nB-MwM"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Security Code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRE-Pe-qyn">
                                 <rect key="frame" x="124" y="493" width="176" height="21"/>
@@ -453,12 +459,18 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="onExpirationEdit:" destination="bhB-P9-k1s" eventType="editingChanged" id="h6r-bD-SQW"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="945" textAlignment="center" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-s4-S3q">
                                 <rect key="frame" x="124" y="521" width="116" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="onSecurityCodeChange:" destination="bhB-P9-k1s" eventType="editingChanged" id="lvl-UH-AGX"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -544,7 +556,7 @@
                         <outlet property="subtotalLabel" destination="GQZ-mH-yo0" id="wZm-5O-Ev3"/>
                         <outlet property="taxAmountLabel" destination="zsr-qL-9R2" id="TnG-Aj-qWp"/>
                         <outlet property="taxLabel" destination="r4k-Yp-PDS" id="HwZ-go-gHl"/>
-                        <outlet property="totalAmountLabel" destination="TcO-3j-0No" id="7IK-T0-mia"/>
+                        <outlet property="totalAmountLabel" destination="TcO-3j-0No" id="Or9-3Y-QND"/>
                         <outlet property="totalLabel" destination="KX4-gu-Gzg" id="nwx-pg-Qat"/>
                         <outlet property="weAcceptLabel" destination="OwA-8M-wtM" id="fsM-VE-2fS"/>
                         <segue destination="13Z-sc-dpl" kind="presentation" identifier="thankyou" id="chw-la-oeo"/>

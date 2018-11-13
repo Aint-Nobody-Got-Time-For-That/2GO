@@ -46,6 +46,46 @@ class OrderViewController: UIViewController {
     
     var enabledColor = UIColor.init(red: 1.0, green: 0.576, blue: 0.0, alpha: 1.0)
     
+    
+    func disableButton() {
+        checkoutButton.isEnabled = false
+        checkoutButton.backgroundColor = UIColor.gray
+    }
+    
+    func enableButton() {
+        checkoutButton.backgroundColor = enabledColor
+        checkoutButton.isEnabled = true
+    }
+    
+    func checkPaymentFields() -> Bool {
+        let nameTextCount = cardNameText.text?.count ?? 0
+        if( nameTextCount == 0) {
+            return false
+        }
+        
+        let cardNumberTextCount =  cardNumberText.text?.count ?? 0
+        if( cardNumberTextCount != 16) {
+            return false
+        }
+        
+        if(securityText.text!.count < 3) {
+            return false
+        }
+        
+        if(expireText.text!.count < 3) {
+            return false
+        }
+        return true
+    }
+    
+    func verifyFields() {
+        if(checkPaymentFields()) {
+            enableButton()
+        } else {
+            disableButton()
+        }
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         disableButton()
@@ -69,16 +109,6 @@ class OrderViewController: UIViewController {
         subtotalLabel.text = subtotalString
         taxAmountLabel.text = taxString
         totalAmountLabel.text = totalString
-    }
-    
-    func disableButton() {
-        checkoutButton.isEnabled = false
-        checkoutButton.backgroundColor = UIColor.gray
-    }
-    
-    func enableButton() {
-        checkoutButton.backgroundColor = enabledColor
-        checkoutButton.isEnabled = true
     }
     
     @IBAction func didTapCheckout(_ sender: UIButton) {
@@ -109,6 +139,25 @@ class OrderViewController: UIViewController {
             }
         }
         
+    }
+    
+    
+    @IBAction func onNameEdit(_ sender: UITextField) {
+        verifyFields()
+    }
+    
+    @IBAction func onSecurityCodeChange(_ sender: UITextField) {
+        if( sender.text!.count > 4) {
+            sender.text?.removeLast()
+        }
+        verifyFields()
+    }
+    
+    @IBAction func onExpirationEdit(_ sender: UITextField) {
+        if( sender.text!.count > 5) {
+            sender.text?.removeLast()
+        }
+        verifyFields()
     }
     
     override func viewDidLoad() {
