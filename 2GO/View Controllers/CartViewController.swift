@@ -15,6 +15,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var total = 0.0
     var delete = false
+    var enabledColor = UIColor.init(red: 1.0, green: 0.576, blue: 0.0, alpha: 1.0)
     
     var resMenuItems: [MenuItem] = [] {
         didSet {
@@ -22,6 +23,16 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 tableView.reloadData()
             }
         }
+    }
+    
+    func disableButton() {
+        orderButton.isEnabled = false
+        orderButton.backgroundColor = UIColor.gray
+    }
+    
+    func enableButton() {
+        orderButton.isEnabled = true
+        orderButton.backgroundColor = enabledColor
     }
     
     func cartTableViewCellDidTapAdd(_ sender: CartTableViewCell) {
@@ -78,11 +89,9 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if error == nil, let items = objects {
                 self.resMenuItems = items as! [MenuItem]
                 if( self.resMenuItems.count == 0 ) {
-                    self.orderButton.isEnabled = false
-                    self.orderButton.alpha = 0.77
+                    self.disableButton()
                 } else {
-                    self.orderButton.isEnabled = true
-                    self.orderButton.alpha = 1.0
+                    self.enableButton()
                 }
             } else {
                 print("Error in restaurant query: \(error!)")
@@ -162,8 +171,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 self.delete = false
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
                 if( self.resMenuItems.count == 0 ) {
-                    self.orderButton.isEnabled = false
-                    self.orderButton.alpha = 0.77
+                   self.disableButton()
                 }
                 
             }

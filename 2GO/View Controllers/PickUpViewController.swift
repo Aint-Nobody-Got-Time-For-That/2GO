@@ -53,6 +53,8 @@ class PickUpViewController: UIViewController{
     var restaurantId: String!
     var cart: [OrderItem]!
     
+    var enabledColor = UIColor.init(red: 1.0, green: 0.576, blue: 0.0, alpha: 1.0)
+    
     // phone number validation from stackoverflow.com/questions/27998409/email-phone-validation-in-swift user kirit Modi
     func validate(value: String) -> Bool {
         let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
@@ -70,11 +72,11 @@ class PickUpViewController: UIViewController{
    
     func disableButton() {
         doneButton.isEnabled = false
-        doneButton.alpha = 0.77
+        doneButton.backgroundColor = UIColor.gray
     }
     
     func enableButton() {
-        doneButton.alpha = 1.0
+        doneButton.backgroundColor = enabledColor
         doneButton.isEnabled = true
     }
     
