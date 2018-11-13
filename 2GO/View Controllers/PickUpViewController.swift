@@ -60,9 +60,9 @@ class PickUpViewController: UIViewController{
         let result =  phoneTest.evaluate(with: value)
         return result
     }
-    
+    //same thing with username
     func validateName(value: String) -> Bool {
-        let NAME_REGEX = ".*[^A-Za-z ].*" 
+        let NAME_REGEX = ".*[^A-Za-z ].*"
         let nameTest = NSPredicate(format: "SELF MATCHES %@", NAME_REGEX)
         let result =  nameTest.evaluate(with: value)
         return result
