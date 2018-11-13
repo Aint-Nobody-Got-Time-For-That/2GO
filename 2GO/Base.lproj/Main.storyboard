@@ -753,7 +753,7 @@
                                     <action selector="didTapOK:" destination="13Z-sc-dpl" eventType="touchUpInside" id="TiX-mf-haX"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your orders are being prepared and will alert when ready." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KH-eP-hLs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your order is being prepared. You'll receive a text when your order is ready!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0KH-eP-hLs">
                                 <rect key="frame" x="34" y="188" width="345" height="96.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
@@ -1179,7 +1179,6 @@
         <image name="visa" width="500" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sMq-Ep-XW1"/>
         <segue reference="wXK-7u-QPs"/>
         <segue reference="gXp-2c-oMS"/>
     </inferredMetricsTieBreakers>
