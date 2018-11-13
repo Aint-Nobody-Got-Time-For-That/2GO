@@ -68,6 +68,8 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
                 }
                 return
             }
+            
+            
         }
 
         if !cart.contains(objectId) {
@@ -158,17 +160,17 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         imageView.file = restaurant.photo
         imageView.loadInBackground()
         
-        tableView.contentInset = UIEdgeInsetsMake(229, 0, 0, 0)
+        tableView.contentInset = UIEdgeInsetsMake(208, 0, 0, 0)
         tableView.backgroundColor = UIColor.white
         
-        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 300)
+        imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height/2 - 100)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         view.addSubview(imageView)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let y = 370 - (scrollView.contentOffset.y + 300)
+        let y =  (UIScreen.main.bounds.size.height/2 - 10) - (scrollView.contentOffset.y + 300)
         let height = min(max(y, 60), 400)
         imageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: height)
     }

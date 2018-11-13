@@ -11,7 +11,6 @@ import UIKit
 class ConfirmViewController: UIViewController {
     
     @IBOutlet weak var pickupLabel: UILabel!
-    @IBOutlet weak var detailView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     

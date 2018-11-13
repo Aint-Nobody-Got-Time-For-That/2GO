@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         
         if let fontStyle = UIFont(name: "ArialHebrew-Bold", size: 19) {
             UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font: fontStyle]
-            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.gray]
+            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.black]
         }
         
         return true
