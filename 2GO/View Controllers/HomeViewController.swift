@@ -143,7 +143,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         scrollView.frame.width == view.frame.width
         imageSwipper()
         
-        
+      
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.white
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

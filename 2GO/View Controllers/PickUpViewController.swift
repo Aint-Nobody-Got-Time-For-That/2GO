@@ -61,6 +61,13 @@ class PickUpViewController: UIViewController{
         return result
     }
     
+    func validateName(value: String) -> Bool {
+        let NAME_REGEX = ".*[^A-Za-z ].*" 
+        let nameTest = NSPredicate(format: "SELF MATCHES %@", NAME_REGEX)
+        let result =  nameTest.evaluate(with: value)
+        return result
+    }
+   
     func disableButton() {
         doneButton.isEnabled = false
         doneButton.alpha = 0.77
@@ -141,6 +148,11 @@ class PickUpViewController: UIViewController{
         let name = nameText.text!
         
         if( name == "" ||  phoneNumber == "") {
+            return
+        }
+        
+        if( validateName(value: name) != false) {
+            alertControl("Please enter a valid name")
             return
         }
         

@@ -62,7 +62,7 @@ class MenuViewController: UIViewController {
     @IBAction func addtoCart(_ sender: UIButton) {
         let objectId = menu.objectId!
         let defaults = UserDefaults.standard
-        
+       
         var cart = defaults.array(forKey:"cart") as! [String]
         
         if defaults.string(forKey: "currentRestaurant") == nil {
