@@ -541,7 +541,10 @@
                         <outlet property="paymentMethodLabel" destination="O67-yf-Sj8" id="0AA-kA-xMh"/>
                         <outlet property="securityCodeLabel" destination="kRE-Pe-qyn" id="bdO-0a-agw"/>
                         <outlet property="securityText" destination="UE9-s4-S3q" id="NWe-XQ-vvU"/>
+                        <outlet property="subtotalLabel" destination="GQZ-mH-yo0" id="wZm-5O-Ev3"/>
+                        <outlet property="taxAmountLabel" destination="zsr-qL-9R2" id="TnG-Aj-qWp"/>
                         <outlet property="taxLabel" destination="r4k-Yp-PDS" id="HwZ-go-gHl"/>
+                        <outlet property="totalAmountLabel" destination="TcO-3j-0No" id="7IK-T0-mia"/>
                         <outlet property="totalLabel" destination="KX4-gu-Gzg" id="nwx-pg-Qat"/>
                         <outlet property="weAcceptLabel" destination="OwA-8M-wtM" id="fsM-VE-2fS"/>
                         <segue destination="13Z-sc-dpl" kind="presentation" identifier="thankyou" id="chw-la-oeo"/>
