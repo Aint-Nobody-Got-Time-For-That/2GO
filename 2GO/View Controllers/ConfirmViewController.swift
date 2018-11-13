@@ -15,6 +15,7 @@ class ConfirmViewController: UIViewController {
     @IBOutlet weak var phoneLabel: UILabel!
     
     var restaurantId: String!
+    var subtotal: Double!
     var phoneNumber: String!
     var name: String!
     var cart: [OrderItem]!
@@ -40,5 +41,6 @@ class ConfirmViewController: UIViewController {
         orderViewController.buyerName = name
         orderViewController.restaurantId = restaurantId
         orderViewController.cart = cart
+        orderViewController.subtotal = subtotal
     }
 }

@@ -14,6 +14,10 @@ class OrderViewController: UIViewController {
 
     @IBOutlet weak var itemLabel: UILabel!
     
+    @IBOutlet weak var subtotalLabel: UILabel!
+    @IBOutlet weak var taxAmountLabel: UILabel!
+    @IBOutlet weak var totalAmountLabel: UILabel!
+    
     @IBOutlet weak var taxLabel: UILabel!
     @IBOutlet weak var orderLabel: UILabel!
     @IBOutlet weak var lineImage: UIImageView!
@@ -38,6 +42,44 @@ class OrderViewController: UIViewController {
     var buyerName: String!
     var restaurantId: String!
     var cart: [OrderItem]!
+    var subtotal: Double!
+    
+    var enabledColor = UIColor.init(red: 1.0, green: 0.576, blue: 0.0, alpha: 1.0)
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        disableButton()
+        
+        let sfSalesTax = 0.085
+        let tax = sfSalesTax * subtotal
+        let total = subtotal + tax
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
+        let nsNumberTax = NSNumber.init(value:tax)
+        let nsNumbersubTotal = NSNumber.init(value:subtotal)
+        let nsNumberTotal = NSNumber.init(value:total)
+        
+        let subtotalString = currencyFormatter.string(from: nsNumbersubTotal)!
+        let taxString = currencyFormatter.string(from: nsNumberTax)!
+        let totalString = currencyFormatter.string(from: nsNumberTotal)!
+
+        subtotalLabel.text = subtotalString
+        taxAmountLabel.text = taxString
+        totalAmountLabel.text = totalString
+    }
+    
+    func disableButton() {
+        checkoutButton.isEnabled = false
+        checkoutButton.backgroundColor = UIColor.gray
+    }
+    
+    func enableButton() {
+        checkoutButton.backgroundColor = enabledColor
+        checkoutButton.isEnabled = true
+    }
     
     @IBAction func didTapCheckout(_ sender: UIButton) {
         

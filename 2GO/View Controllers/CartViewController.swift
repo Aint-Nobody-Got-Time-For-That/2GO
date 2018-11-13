@@ -222,6 +222,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let pickupViewController = segue.destination as! PickUpViewController
         pickupViewController.restaurantId = restaurantId
         pickupViewController.cart = cart
+        pickupViewController.subtotal = total
         
      }
 }

@@ -50,6 +50,7 @@ class PickUpViewController: UIViewController{
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var phoneNumberText: UITextField!
     
+    var subtotal: Double!
     var restaurantId: String!
     var cart: [OrderItem]!
     
@@ -182,6 +183,7 @@ class PickUpViewController: UIViewController{
         confirmViewController.cart = cart
         confirmViewController.name = nameText.text!
         confirmViewController.phoneNumber = phoneNumberText.text!
+        confirmViewController.subtotal = subtotal
     }
 
 }
