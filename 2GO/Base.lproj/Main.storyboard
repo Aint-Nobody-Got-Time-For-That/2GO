@@ -738,11 +738,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRT-fC-RZg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRT-fC-RZg">
                                 <rect key="frame" x="0.0" y="688" width="414" height="48"/>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="UCr-ny-KnH"/>
+                                    <constraint firstAttribute="height" constant="48" id="UCr-ny-KnH"/>
                                     <constraint firstAttribute="width" constant="414" id="dnj-Gp-vPV"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
@@ -770,7 +770,7 @@
                         <constraints>
                             <constraint firstItem="OdU-qP-vdZ" firstAttribute="trailing" secondItem="oB9-mn-3n2" secondAttribute="trailing" constant="35" id="5CM-CJ-zRv"/>
                             <constraint firstItem="oB9-mn-3n2" firstAttribute="leading" secondItem="OdU-qP-vdZ" secondAttribute="leading" constant="34" id="6wC-yL-8ZF"/>
-                            <constraint firstItem="OdU-qP-vdZ" firstAttribute="bottom" secondItem="LRT-fC-RZg" secondAttribute="bottom" constant="49" id="DXO-zZ-Crg"/>
+                            <constraint firstItem="OdU-qP-vdZ" firstAttribute="bottom" secondItem="LRT-fC-RZg" secondAttribute="bottom" id="DXO-zZ-Crg"/>
                             <constraint firstItem="oB9-mn-3n2" firstAttribute="top" secondItem="OdU-qP-vdZ" secondAttribute="top" constant="69" id="EAx-oy-etj"/>
                             <constraint firstItem="0KH-eP-hLs" firstAttribute="top" secondItem="oB9-mn-3n2" secondAttribute="bottom" constant="60.670000000000002" id="FZe-RE-BeG"/>
                             <constraint firstItem="LRT-fC-RZg" firstAttribute="trailing" secondItem="OdU-qP-vdZ" secondAttribute="trailing" id="IQo-w6-Jju"/>
