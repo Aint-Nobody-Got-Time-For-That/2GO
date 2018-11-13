@@ -10,7 +10,7 @@ import UIKit
 import AlamofireImage
 import Parse
 
-class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate {
+class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate{
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -25,8 +25,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         filteredRestaurants = searchText.isEmpty ? restaurants : restaurants.filter{( $0["name"] as! String).range( of:searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        
         }
+        
         self.collectionView.reloadData()
+        
     }
     
     var restaurant: Restaurant!
@@ -129,16 +132,17 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
         searchBar.delegate = self
         collectionLayout()
-        
+       
         searchBar.delegate = self
         searchBarEdit()
-        
+
         //swipping image view
         scrollView.frame.width == view.frame.width
         imageSwipper()

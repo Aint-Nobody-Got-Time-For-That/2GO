@@ -152,7 +152,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = 135
-
+        
         resName.text = restaurant.name
         resNumber.text = restaurant.phoneNumber
         resAddress.text = "\(restaurant.street) \(restaurant.city) \(restaurant.state) \(restaurant.zipCode)"

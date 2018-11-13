@@ -89,7 +89,8 @@ class OrderViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         disableButton()
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         let sfSalesTax = 0.085
         let tax = sfSalesTax * subtotal
         let total = subtotal + tax
@@ -109,6 +110,10 @@ class OrderViewController: UIViewController {
         subtotalLabel.text = subtotalString
         taxAmountLabel.text = taxString
         totalAmountLabel.text = totalString
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func didTapCheckout(_ sender: UIButton) {

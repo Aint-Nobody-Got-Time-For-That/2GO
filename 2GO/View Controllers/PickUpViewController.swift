@@ -86,6 +86,9 @@ class PickUpViewController: UIViewController{
         nameText.clearButtonMode = UITextFieldViewMode.whileEditing
         phoneNumberText.clearButtonMode = UITextFieldViewMode.whileEditing
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
         let defaults = UserDefaults.standard
         if( defaults.string(forKey: "usersName") != nil ){
             nameText.text = defaults.string(forKey: "usersName")
@@ -101,8 +104,11 @@ class PickUpViewController: UIViewController{
         
         // Do any additional setup after loading the view.
     }
-
     
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
