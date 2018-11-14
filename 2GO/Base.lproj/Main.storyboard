@@ -462,11 +462,11 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="945" textAlignment="center" minimumFontSize="20" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="UE9-s4-S3q">
-                                <rect key="frame" x="194" y="524.33333333333337" width="48" height="30"/>
+                                <rect key="frame" x="314" y="524" width="81" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cgl-9K-Nu2"/>
-                                    <constraint firstAttribute="width" constant="48" id="p4a-MW-gzq"/>
+                                    <constraint firstAttribute="width" constant="81" id="p4a-MW-gzq"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -475,7 +475,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="CVV" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kRE-Pe-qyn">
-                                <rect key="frame" x="194" y="495" width="34" height="21"/>
+                                <rect key="frame" x="314" y="496" width="34" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -507,9 +507,9 @@
                             <constraint firstItem="OwA-8M-wtM" firstAttribute="top" secondItem="FIN-WM-fY7" secondAttribute="bottom" constant="76" id="JqH-Bf-7jZ"/>
                             <constraint firstItem="TcO-3j-0No" firstAttribute="top" secondItem="FIN-WM-fY7" secondAttribute="bottom" constant="27" id="Ju2-iK-O8t"/>
                             <constraint firstItem="Zre-an-CtY" firstAttribute="leading" secondItem="ahX-a7-Fah" secondAttribute="leading" constant="20" id="KSN-mv-HUB"/>
-                            <constraint firstItem="ahX-a7-Fah" firstAttribute="trailing" secondItem="UE9-s4-S3q" secondAttribute="trailing" constant="172" id="L7U-ae-SH7"/>
+                            <constraint firstItem="ahX-a7-Fah" firstAttribute="trailing" secondItem="UE9-s4-S3q" secondAttribute="trailing" constant="19" id="L7U-ae-SH7"/>
                             <constraint firstItem="O67-yf-Sj8" firstAttribute="top" secondItem="OwA-8M-wtM" secondAttribute="bottom" constant="8" id="LLQ-do-LI3"/>
-                            <constraint firstItem="ahX-a7-Fah" firstAttribute="trailing" secondItem="kRE-Pe-qyn" secondAttribute="trailing" constant="186" id="Mzm-08-XL5"/>
+                            <constraint firstItem="ahX-a7-Fah" firstAttribute="trailing" secondItem="kRE-Pe-qyn" secondAttribute="trailing" constant="66" id="Mzm-08-XL5"/>
                             <constraint firstItem="Zre-an-CtY" firstAttribute="top" secondItem="KX4-gu-Gzg" secondAttribute="bottom" constant="96" id="N3o-mA-H1u"/>
                             <constraint firstItem="FIN-WM-fY7" firstAttribute="top" secondItem="r4k-Yp-PDS" secondAttribute="bottom" constant="25" id="NMz-fI-REu"/>
                             <constraint firstItem="KX4-gu-Gzg" firstAttribute="leading" secondItem="ahX-a7-Fah" secondAttribute="leading" constant="16" id="NbV-zh-fhb"/>
@@ -519,7 +519,7 @@
                             <constraint firstItem="ahX-a7-Fah" firstAttribute="trailing" secondItem="NCO-MQ-ox4" secondAttribute="trailing" constant="14" id="Swj-aH-GML"/>
                             <constraint firstItem="KX4-gu-Gzg" firstAttribute="top" secondItem="FIN-WM-fY7" secondAttribute="bottom" constant="28" id="Viw-rG-gcP"/>
                             <constraint firstItem="r4k-Yp-PDS" firstAttribute="leading" secondItem="bS3-eY-qat" secondAttribute="leading" id="ZWW-ab-lIT"/>
-                            <constraint firstItem="kRE-Pe-qyn" firstAttribute="top" secondItem="wQz-t9-hBE" secondAttribute="bottom" constant="19.666666666666686" id="a8m-6C-0hf"/>
+                            <constraint firstItem="kRE-Pe-qyn" firstAttribute="top" secondItem="wQz-t9-hBE" secondAttribute="bottom" constant="20.666666666666686" id="a8m-6C-0hf"/>
                             <constraint firstItem="ahX-a7-Fah" firstAttribute="trailing" secondItem="O67-yf-Sj8" secondAttribute="trailing" constant="78" id="asq-Fs-pBf"/>
                             <constraint firstItem="HOG-1B-Jrg" firstAttribute="bottom" secondItem="ahX-a7-Fah" secondAttribute="bottom" constant="2" id="b3d-1N-xXf"/>
                             <constraint firstItem="OwA-8M-wtM" firstAttribute="leading" secondItem="ahX-a7-Fah" secondAttribute="leading" constant="123" id="czK-yJ-ffh"/>
@@ -540,7 +540,7 @@
                             <constraint firstItem="r4k-Yp-PDS" firstAttribute="leading" secondItem="Zre-an-CtY" secondAttribute="leading" id="yVq-0K-zT2"/>
                             <constraint firstItem="ahX-a7-Fah" firstAttribute="trailing" secondItem="zsr-qL-9R2" secondAttribute="trailing" constant="14" id="ytF-H8-KRO"/>
                             <constraint firstItem="r4k-Yp-PDS" firstAttribute="top" secondItem="YWx-t1-TgR" secondAttribute="bottom" constant="23" id="yuF-u8-2sv"/>
-                            <constraint firstItem="UE9-s4-S3q" firstAttribute="top" secondItem="kRE-Pe-qyn" secondAttribute="bottom" constant="8.3333333333333712" id="zFi-Fb-0Qg"/>
+                            <constraint firstItem="UE9-s4-S3q" firstAttribute="top" secondItem="kRE-Pe-qyn" secondAttribute="bottom" constant="7" id="zFi-Fb-0Qg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ahX-a7-Fah"/>
                     </view>
@@ -1199,7 +1199,7 @@
         <image name="visa" width="500" height="39"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="QOh-uF-hF9"/>
+        <segue reference="chw-la-oeo"/>
         <segue reference="wXK-7u-QPs"/>
         <segue reference="gXp-2c-oMS"/>
     </inferredMetricsTieBreakers>
