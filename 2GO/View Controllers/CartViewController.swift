@@ -17,12 +17,31 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var delete = false
     var enabledColor = UIColor.init(red: 1.0, green: 0.576, blue: 0.0, alpha: 1.0)
     
+    func emptyCart() {
+        let image = UIImage(named: "emptyCart")
+        let imageView = UIImageView(image:image)
+        imageView.contentMode = .scaleAspectFit
+        self.tableView.backgroundView = imageView
+        
+        self.tableView.separatorStyle = .none
+    }
+
+    func resetCartBackground() {
+        self.tableView.separatorStyle = .singleLine
+        self.tableView.backgroundView = nil
+    }
+    
     var resMenuItems: [MenuItem] = [] {
         didSet {
             if(!delete) {
                 tableView.reloadData()
             }
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        resetCartBackground()
     }
     
     func disableButton() {
@@ -110,6 +129,12 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if( resMenuItems.count == 0 ) {
+            emptyCart()
+            return 0
+        }
+        
+        resetCartBackground()
         return resMenuItems.count
     }
     
@@ -199,6 +224,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
      // MARK: - Navigation
+    
      
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
