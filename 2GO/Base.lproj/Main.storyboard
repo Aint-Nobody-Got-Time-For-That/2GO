@@ -419,7 +419,7 @@
                                 <rect key="frame" x="20" y="368.33333333333331" width="380" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" textContentType="name"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" textContentType="name"/>
                                 <connections>
                                     <action selector="onNameEdit:" destination="bhB-P9-k1s" eventType="editingChanged" id="je0-tf-p3T"/>
                                 </connections>
@@ -456,7 +456,7 @@
                                     <constraint firstAttribute="height" constant="30" id="qIo-ii-qyx"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" smartQuotesType="no"/>
                                 <connections>
                                     <action selector="onExpirationEdit:" destination="bhB-P9-k1s" eventType="editingChanged" id="h6r-bD-SQW"/>
                                 </connections>
