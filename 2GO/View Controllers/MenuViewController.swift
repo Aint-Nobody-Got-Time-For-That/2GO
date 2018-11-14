@@ -80,9 +80,13 @@ class MenuViewController: UIViewController {
                     let currentId = self.restaurant.objectId!
                     defaults.set(currentId,forKey: "currentRestaurant")
                     var cart = defaults.array(forKey:"cart") as! [String]
+                    for item in cart {
+                        defaults.removeObject(forKey: item)
+                    }
                     cart.removeAll()
                     cart.append(objectId)
                     defaults.set(cart, forKey: "cart")
+                    defaults.set(1, forKey: objectId)
                     defaults.synchronize()
                 }
                 let cancelAction = UIAlertAction(title: "No", style: .default) { (action) in
