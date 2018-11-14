@@ -9,6 +9,7 @@
 import UIKit
 import AlamofireImage
 import ParseUI
+import PKHUD
 
 class MenuViewController: UIViewController {
     
@@ -104,8 +105,13 @@ class MenuViewController: UIViewController {
             var amount = defaults.integer(forKey: objectId)
             amount+=1
             defaults.set(amount,forKey:objectId)
-           sender.flash()
         }
+        
+        // show PKHUD
+        PKHUD.sharedHUD.contentView = PKHUDSuccessView(title: "Added")
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 0.3, completion: { (success) in
+        })
         
     }
     

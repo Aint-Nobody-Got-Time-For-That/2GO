@@ -8,6 +8,8 @@
 
 import UIKit
 import ParseUI
+import PKHUD
+
 
 class RestaurantViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -62,7 +64,6 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
                 }
                 alertController.addAction(OKAction)
                 alertController.addAction(cancelAction)
-                
                 self.present(alertController, animated: true) {
                     // optional code for what happens after the alert controller has finished presenting
                 }
@@ -77,13 +78,16 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, UITable
             defaults.set(cart, forKey: "cart")
             defaults.set(1,forKey: objectId)
             defaults.synchronize()
-            //alertControl("Dish Added!")
         } else {
             var amount = defaults.integer(forKey: objectId)
             amount+=1
             defaults.set(amount,forKey:objectId)
-            sender.flash()
         }
+        // show PKHUD
+        PKHUD.sharedHUD.contentView = PKHUDSuccessView(title: "Added")
+        PKHUD.sharedHUD.show()
+        PKHUD.sharedHUD.hide(afterDelay: 0.3, completion: { (success) in
+        })
     
     }
     

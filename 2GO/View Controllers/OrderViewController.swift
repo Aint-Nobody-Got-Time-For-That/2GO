@@ -62,12 +62,7 @@ class OrderViewController: UIViewController {
         if( nameTextCount == 0) {
             return false
         }
-        
-        let cardNumberTextCount =  cardNumberText.text?.count ?? 0
-        if( cardNumberTextCount != 16) {
-            return false
-        }
-        
+                
         if(securityText.text!.count < 3) {
             return false
         }
