@@ -58,6 +58,7 @@ class OrderViewController: UIViewController {
     }
     
     func checkPaymentFields() -> Bool {
+        /*
         let nameTextCount = cardNameText.text?.count ?? 0
         if( nameTextCount == 0) {
             return false
@@ -69,7 +70,7 @@ class OrderViewController: UIViewController {
         
         if(expireText.text!.count < 3) {
             return false
-        }
+        }*/
         return true
     }
     
@@ -83,7 +84,7 @@ class OrderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        disableButton()
+        enableButton()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
         let sfSalesTax = 0.085
