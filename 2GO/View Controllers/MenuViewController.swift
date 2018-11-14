@@ -66,7 +66,7 @@ class MenuViewController: UIViewController {
        
         var cart = defaults.array(forKey:"cart") as! [String]
         
-        if defaults.string(forKey: "currentRestaurant") == nil {
+        if defaults.string(forKey: "currentRestaurant") == nil || cart.count == 0{
             let currentId = restaurant.objectId
             defaults.set(currentId, forKey: "currentRestaurant")
         } else {
