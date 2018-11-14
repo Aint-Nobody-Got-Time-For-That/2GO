@@ -132,6 +132,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.searchBar.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,7 +147,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         searchBarEdit()
 
         //swipping image view
-        scrollView.frame.width == view.frame.width
         imageSwipper()
         
       
