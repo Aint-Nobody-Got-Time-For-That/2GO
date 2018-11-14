@@ -249,6 +249,7 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         pickupViewController.restaurantId = restaurantId
         pickupViewController.cart = cart
         pickupViewController.subtotal = total
+        pickupViewController.hidesBottomBarWhenPushed = true
         
      }
 }
