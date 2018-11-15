@@ -7,17 +7,17 @@ With our application, no one needs to wait in line for food by providing users c
 ## User Stories
 
 - [x] Users can create a new account to sign up to be a seller
-- [ ] Users can create a new account to sign up to be a buyer
+- [x] Users can create a new account to sign up to be a buyer
 - [x] Users sees an app icon in home screen and styled launch screen
 - [x] Users can log in and log out of his or her account
 - [x] The current signed in user is persisted across app restarts
 - [x] Buyer can scroll through a list of restaurants nearby
 - [x] Buyer can tap a cell to see a detail view of the restaurant and food
 - [x] Buyer can put food into a cart
-- [ ] Buyer can see a confirmation screen
+- [x] Buyer can see a confirmation screen
 - [x] Sellers can create menu for a business, (adding photos and text fields)
 - [x] Sellers can edit their business
-- [ ] Sellers can get a notification on any orders that are coming.
+- [x] Sellers can get a notification on any orders that are coming.
 
 ## Optionals
 
@@ -25,7 +25,7 @@ With our application, no one needs to wait in line for food by providing users c
 - [ ] Apple Pay for paying
 - [ ] Email receipt when user decided to confirm on order
 
-![](https://github.com/Aint-Nobody-Got-Time-For-That/2GO/blob/patkhai/2GO3.gif)
+![](https://github.com/Aint-Nobody-Got-Time-For-That/2GO/blob/master/2GO4.gif)
 
 ## Data Model
 
