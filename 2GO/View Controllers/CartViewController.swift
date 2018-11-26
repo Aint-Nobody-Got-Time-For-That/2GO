@@ -61,10 +61,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         defaults.set(currentAmount,forKey:sender.menuItem.objectId!)
         defaults.synchronize()
         sender.itemAmountLabel.text = String(currentAmount)
-        let price = Double(sender.menuItem.price)!
-        let previousTotal = total
-        let newTotal = previousTotal + price
-        total = newTotal
         setTotalText()
     }
     
@@ -77,10 +73,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             currentAmount-=1
             defaults.set(currentAmount, forKey: sender.menuItem.objectId!)
             defaults.synchronize()
-            let price = Double(sender.menuItem.price)!
-            let previousTotal = total
-            let newTotal = previousTotal - price
-            total = newTotal
             setTotalText()
         }
         sender.itemAmountLabel.text = String(currentAmount)
@@ -91,14 +83,24 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
         currencyFormatter.locale = Locale.current
-        let nsNumberSum = NSNumber.init(value:total)
+        
+        let defaults = UserDefaults.standard
+    
+        var totalCartValue = 0.0
+        for item in resMenuItems {
+            let price = Double(item.price)!
+            let amount = defaults.integer(forKey: item.objectId!)
+            let itemCost = price * Double(amount)
+            totalCartValue += itemCost
+        }
+        total = totalCartValue
+        let nsNumberSum = NSNumber.init(value:totalCartValue)
         let sumString = "Order: " + currencyFormatter.string(from: nsNumberSum)!
         orderButton.setTitle(sumString, for: .normal)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        total = 0.0
         setTotalText()
         let defaults = UserDefaults.standard
         let cart = defaults.array(forKey: "cart") as! [String]
@@ -148,9 +150,6 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let amount = defaults.integer(forKey: cell.menuItem.objectId!)
         cell.itemAmountLabel.text = String(amount)
         let subtotal = price * Double(amount)
-        let previousTotal = total
-        let newTotal = subtotal + previousTotal
-        total = newTotal
         setTotalText()
         return cell
     }
@@ -175,21 +174,14 @@ class CartViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let deleteAction = UIAlertAction(title: "Delete", style: UIAlertActionStyle.default) { (action) in
                 let defaults = UserDefaults.standard
                 let cell = tableView.cellForRow(at: indexPath) as! CartTableViewCell
-                let price = Double(cell.menuItem.price)!
-                let amount = Double(defaults.integer(forKey: cell.menuItem.objectId!))
-                let subtotal = price * amount
-                self.total =  self.total - subtotal
-                if(self.total <= 0 ){
-                    self.total = 0.0
-                }
                 cell.itemAmountLabel.text = "1" //reset amount label
-                self.setTotalText()
                 self.delete = true
                 self.resMenuItems.remove(at: indexPath.row)
                 var cart: [String] = []
                 for item in self.resMenuItems {
                     cart.append(item.objectId!)
                 }
+                self.setTotalText()
                 defaults.removeObject(forKey: cell.menuItem.objectId!)
                 defaults.set(cart, forKey: "cart")
                 defaults.synchronize()
