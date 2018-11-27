@@ -139,7 +139,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         var currentOffset = Int(scrollView.contentOffset.x)
         currentOffset += Int(width)
         currentOffset = currentOffset % (imageArray.count * Int(width))
-        scrollView.setContentOffset(CGPoint(x:currentOffset, y:0), animated: true)
+        //scrollView.setContentOffset(CGPoint(x:currentOffset, y:0), animated: true)
+        UIImageView.animate(withDuration: 5.0, animations:
+            {
+                self.scrollView.setContentOffset(CGPoint(x:currentOffset, y:0), animated: false)
+            }
+        )
     }
     
     override func viewDidLoad() {
