@@ -139,7 +139,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         var currentOffset = Int(scrollView.contentOffset.x)
         currentOffset += Int(width)
         currentOffset = currentOffset % (imageArray.count * Int(width))
-        //scrollView.setContentOffset(CGPoint(x:currentOffset, y:0), animated: true)
         UIImageView.animate(withDuration: 5.0, animations:
             {
                 self.scrollView.setContentOffset(CGPoint(x:currentOffset, y:0), animated: false)
@@ -160,8 +159,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         //swipping image view
         imageSwipper()
         
-        // move every 5 seconds
-        _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(rotateImage), userInfo: nil, repeats: true)
+        // move every 10 seconds
+        _ = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(rotateImage), userInfo: nil, repeats: true)
 
         
       
