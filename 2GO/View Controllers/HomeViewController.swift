@@ -127,13 +127,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
             scrollView.contentSize.width = scrollView.frame.width * CGFloat(i + 1)
             scrollView.addSubview(imageView)
-            
-            
         }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.searchBar.endEditing(true)
+    }
+    
+    @objc func rotateImage() {
+        let width = scrollView.frame.width
+        var currentOffset = Int(scrollView.contentOffset.x)
+        currentOffset += Int(width)
+        currentOffset = currentOffset % (imageArray.count * Int(width))
+        scrollView.setContentOffset(CGPoint(x:currentOffset, y:0), animated: true)
     }
     
     override func viewDidLoad() {
@@ -148,6 +154,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
         //swipping image view
         imageSwipper()
+        
+        // move every 5 seconds
+        _ = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(rotateImage), userInfo: nil, repeats: true)
+
         
       
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
