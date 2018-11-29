@@ -32,6 +32,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         
     }
     
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.endEditing(true)
+    }
+    
     var restaurant: Restaurant!
     var imageArray = [UIImage]()
     
@@ -160,7 +164,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         imageSwipper()
         
         // move every 10 seconds
-        _ = Timer.scheduledTimer(timeInterval: 10.0, target: self, selector: #selector(rotateImage), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 6.9, target: self, selector: #selector(rotateImage), userInfo: nil, repeats: true)
 
         
       

@@ -40,7 +40,7 @@ extension Substring {
 }
 
 
-class PickUpViewController: UIViewController{
+class PickUpViewController: UIViewController, UITextFieldDelegate{
 
     @IBOutlet weak var titlePickup: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -71,6 +71,12 @@ class PickUpViewController: UIViewController{
         return result
     }
    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
+    }
+    
+    
     func disableButton() {
         doneButton.isEnabled = false
         doneButton.backgroundColor = UIColor.gray
@@ -85,6 +91,9 @@ class PickUpViewController: UIViewController{
         super.viewDidLoad()
         nameText.clearButtonMode = UITextFieldViewMode.whileEditing
         phoneNumberText.clearButtonMode = UITextFieldViewMode.whileEditing
+        
+        nameText.delegate = self
+        phoneNumberText.delegate = self
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
         view.addGestureRecognizer(tap)
