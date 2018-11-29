@@ -24,9 +24,9 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredRestaurants = searchText.isEmpty ? restaurants : restaurants.filter{( $0["name"] as! String).range( of:searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-        
-        }
+            filteredRestaurants = searchText.isEmpty ? restaurants : restaurants.filter{( $0["name"] as! String).range( of:searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            
+            }
         
         self.collectionView.reloadData()
         
@@ -113,7 +113,12 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         restaurantQuery.findObjectsInBackground { (objects: [PFObject]!, error: Error?) in
             if error == nil, let restaurants = objects {
                 self.restaurants = restaurants as! [Restaurant]
-                self.filteredRestaurants = restaurants as! [Restaurant]
+                if self.searchBar.text == "" {
+                    self.filteredRestaurants = restaurants as! [Restaurant]
+                } else {
+                    self.filteredRestaurants = self.restaurants.filter{( $0["name"] as! String).range( of: self.searchBar.text!, options: .caseInsensitive, range: nil, locale: nil) != nil
+                    }
+                }
             } else {
                 print("Error in restaurant query in HomeViewController view did Appear: \(error!)")
             }
@@ -159,6 +164,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
        
         searchBar.delegate = self
         searchBarEdit()
+        
+        searchBar.returnKeyType = .done
 
         //swipping image view
         imageSwipper()
